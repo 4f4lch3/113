@@ -11,7 +11,7 @@
 
 
 
-<title>index.knit</title>
+<title>lect-17.knit</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -353,74 +353,269 @@ display: none;
 </div>
 
 
-<div id="main-menu">
-<p id="banner-1">
-STAT 113 SECTION 1
-</p>
-<p><br></p>
-<p id="banner-2">
-CLASS NOTES - SPRING 2025
-</p>
-<p><br></p>
+<div id="index">
+<p><span style="padding-left:30px;">
+<a href="index.html" style="color:#60269E;"> BACK TO MAIN MENU </a>
+</span></p>
 <ul>
-<li><p>Day 1 (1/27): <a href="lect-1.html" style="font-size:18px">
-Introduction - ALEKS Registration - Initial KC </a></p></li>
-<li><p>Day 2 (1/30): <a href="lect-2.html" style="font-size:18px"> The
-Statistical Software - ALEKS Calculator </a></p></li>
-<li><p>Day 3 (2/3): <a href="lect-3.html" style="font-size:18px">
-Summary of Categorical Data </a></p></li>
-<li><p>Day 4 (2/6): <a href="lect-4.html" style="font-size:18px">
-Summary of Quantitative Data and Introduction to Data Day 1
+<li><p><a href="#d17-1"> Testing for the Population Mean: T test
 </a></p></li>
-<li><p>Day 5 (2/10): <a href="lect-5.html" style="font-size:18px">
-Review for Exam 1 </a></p></li>
-<li><p><span style="background-color:#EEEEEE"> Day 6 (2/13): Exam 1
-<em>(ALEKS Modules 1 and 2)</em> </span></p></li>
-<li><p><span style="background-color:#EEEEEE"> Day 7 (2/18): Data Day 1
-<em>(Classes follow Monday schedule)</em> </span></p></li>
-<li><p>Day 8 (2/20): <a href="lect-6.html" style="font-size:18px">
-Summarizing Two Quantitative Variables </a></p></li>
-<li><p>Day 9 (2/24): <a href="lect-7.html" style="font-size:18px"> The
-Least-Squares Regression Line </a></p></li>
-<li><p>Day 10 (2/27): <a href="lect-8.html" style="font-size:18px">
-Side-by-Side Box Plots </a></p></li>
-<li><p>Day 11 (3/3): <a href="lect-9.html" style="font-size:18px">
-Back-to-Back Stem Plots </a></p></li>
-<li><p>Day 12 (3/10): <a href="lect-10.html" style="font-size:18px">
-Review for Exam 2 </a></p></li>
-<li><p>Day 13 (3/13): Introduction to Data Day 2</p></li>
-<li><p><span style="background-color:#EEEEEE"> Day 14 (3/17): Data Day 2
-</span></p></li>
-<li><p><span style="background-color:#EEEEEE"> Day 15 (3/20): Exam 2
-<em>(ALEKS Modules 3 and 4)</em> </span></p></li>
-<li><p>Day 16 (3/24): <a href="lect-12.html" style="font-size:18px">
-Introduction to Inferential Statistics: Sampling Distribution
+<li><p><a href="#d17-2"> Testing for the Population Mean Using R
 </a></p></li>
-<li><p>Day 17 (3/27): <a href="lect-13.html" style="font-size:18px">
-Point Estimators and Confidence Intervals </a></p></li>
-<li><p>Day 18 (4/3): <a href="lect-14.html" style="font-size:18px">
-Hypothesis Test for a Population Mean and Proportion: Z-test
-</a></p></li>
-<li><p>Day 19 (4/7): Introduction to Data Day 3</p></li>
-<li><p><span style="background-color:#EEEEEE"> Day 20 (4/10): Data Day 3
-</span></p></li>
-<li><p>Day 21 (4/21): <a href="lect-16.html" style="font-size:18px">
-Review for Exam 3 </a></p></li>
-<li><p><span style="background-color:#EEEEEE"> Day 22 (4/24): Exam 3
-<em>(ALEKS Modules, 5,6 and 7)</em> </span></p></li>
-<li><p>Day 23 (4/28): <a href="lect-17.html" style="font-size:18px">
-Hypothesis Testing for Population Mean: T-test </a></p></li>
-<li><p>Day 24 (5/1): <a href="lect-18.html" style="font-size:18px"> The
-Chi-Square Goodness-of-Fit Test </a></p></li>
-<li><p>Day 25 (5/5): Review for Exam 4</p></li>
-<li><p>Day 26 (5/8): Introduction to Data Day 4</p></li>
-<li><p><span style="background-color:#EEEEEE"> Day 27 (5/12): Data Day 4
-</span></p></li>
-<li><p><span style="background-color:#EEEEEE"> Day 28 (5/15): Exam 4
-<em>(ALEKS Module 8)</em> </span></p></li>
-<li><p><span style="background-color:#EEEEEE"> <strong>Final Exam: May
-22, 9 - 11am</strong> </span></p></li>
 </ul>
+</div>
+<div id="content">
+
+
+<hr id="d17-1">
+<h1>
+Hypothesis Test For A Population Mean <em>(when <span class="math inline">\(\sigma\)</span> is unknown)</em>
+</h1>
+<p>When <span class="math inline">\(\bar{X}\)</span> is the mean of a
+sample from a normal population, the quantity</p>
+<p><span class="math inline">\(\frac{\bar{x} -
+\mu}{S/\sqrt{n}}\)</span></p>
+<p>has a Student’s t distribution with <strong>n - 1</strong> degrees of
+freedom.</p>
+<p><strong>Assumptions to consider:</strong></p>
+<ul>
+<li><p>We have a simple random sample</p></li>
+<li><p>The sample size is large (n &gt; 30), OR the population is
+approximately normal.</p></li>
+</ul>
+<hr />
+<div id="the-p-value-method" class="section level3">
+<h3>The P-value Method</h3>
+<p>If the assumptions are satisfied, then proceed with the following
+steps:</p>
+<ul>
+<li><p>STEP 1: State the null and alternate hypotheses. The null
+hypothesis is of the form Ho: <span class="math inline">\(\mu\)</span> =
+<span class="math inline">\(\mu_o\)</span> where <span class="math inline">\(\mu_o\)</span> is the hypothesized value of the
+population mean.</p></li>
+<li><p>STEP 2: If making a decision, choose a significance level <span class="math inline">\(\alpha\)</span>.</p></li>
+<li><p>STEP 3: Compute the test statistic, t = <span class="math inline">\(\frac{\bar{x} -
+\mu_o}{S/\sqrt{n}}\)</span></p></li>
+<li><p>STEP 4: Compute the P-value of the test statistic. Use he ALEKS
+function P(T <span class="math inline">\(\geq\)</span> t with df = …).
+The degrees of freedom are n - 1.</p></li>
+<li><p>STEP 5: Interpret the P-value. If making a decision, reject Ho if
+the P-value is less than or equal to the significance level <span class="math inline">\(\alpha\)</span>.</p></li>
+<li><p>STEP 6: State a conclusion.</p></li>
+</ul>
+<hr />
+</div>
+<div id="the-critical-value-method" class="section level3">
+<h3>The Critical Value Method</h3>
+<ul>
+<li><p>STEP 1: State the null and alternate hypotheses. The null
+hypothesis is of the form Ho: <span class="math inline">\(\mu\)</span> =
+<span class="math inline">\(\mu_o\)</span> where <span class="math inline">\(\mu_o\)</span> is the hypothesized value of the
+population mean.</p></li>
+<li><p>STEP 2: Choose a significance level <span class="math inline">\(\alpha\)</span>, and find the critical value or
+values. Use n - 1 degrees of freedom, where n is the sample
+size.</p></li>
+<li><p>STEP 3: Compute the test statistic, t = <span class="math inline">\(\frac{\bar{x} -
+\mu_o}{S/\sqrt{n}}\)</span></p></li>
+<li><p>STEP 4: Determine whether to reject Ho, as follows.</p></li>
+</ul>
+<blockquote>
+<ul>
+<li>Left-tailed: <span class="math inline">\(H_1: \mu &lt;
+\mu_o\)</span>, reject if t <span class="math inline">\(\leq
+-t_{\alpha}\)</span></li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Right-tailed: <span class="math inline">\(H_1: \mu &gt;
+\mu_o\)</span>, reject if t <span class="math inline">\(\geq
+t_{\alpha}\)</span></li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Two-tailed: <span class="math inline">\(H_1: \mu \neq
+\mu_o\)</span>, reject if t <span class="math inline">\(\leq
+-t_{\alpha/2}\)</span> or t <span class="math inline">\(\geq
+t_{\alpha}\)</span></li>
+</ul>
+</blockquote>
+<ul>
+<li><p>
+STEP 5: State a conclusion
+</p></li>
+</ul>
+<hr />
+<p><strong>Exercise:</strong> An orange grower is introducing a new
+variety of orange. The grower claims that the new oranges have a mean pH
+of 5. To test the claim, an independent researcher chose a random sample
+of 24 of the new oranges, finding they had a sample mean pH of 4.8 with
+a sample standard deviation of 0.6. Assume that the population of pH
+values of the new oranges is approximately normally distributed.</p>
+<p>Complete the parts below to perform a hypothesis test to see if there
+is enough evidence, at the 0.05 level of significance, to reject that
+<span class="math inline">\(\mu\)</span>, the mean pH of the new
+oranges, is 5.</p>
+<ul>
+<li><p>Ho: <span class="math inline">\(\mu\)</span> = 5</p></li>
+<li><p><span class="math inline">\(H_1\)</span>: <span class="math inline">\(\mu \neq\)</span> 5</p></li>
+<li><p>The population standard deviation, <span class="math inline">\(\sigma\)</span>, is <strong>UNKNOWN</strong> and
+the sample size is large (generally n &gt; 30) <strong>OR</strong> the
+population distribution is at least approximately normal.</p></li>
+<li><p>T = <span class="math inline">\(\frac{\bar{x} -
+\mu_0}{\frac{S}{\sqrt{n}}}\)</span></p></li>
+<li><p>T = <span class="math inline">\(\frac{4.8 -
+5}{\frac{0.6}{\sqrt{24}}}\)</span> = -1.633</p></li>
+</ul>
+<p>The rejection region approach <em>(Critical value method)</em></p>
+<ul>
+<li><p>Identify <span class="math inline">\(\alpha\)</span> and the type
+of test.</p></li>
+<li><p>In ALEKS calculator: <span class="math inline">\(t_{0.025;
+df=23}\)</span>. Use 0.025 because this is a two-tailed test.</p></li>
+<li><p>The rejection region is: <span class="math inline">\((-\infty,
+-2.069)\)</span> and <span class="math inline">\((2.069,
+\infty)\)</span></p></li>
+<li><p>Conclusion: Since the value of the test statistic doesn’t lie in
+the rejection region, the null hypothesis is not rejected. So, there is
+not enough evidence to reject the claim that the mean pH of the new
+oranges is 5.</p></li>
+</ul>
+<p>The P-Value approach</p>
+<ul>
+<li><p>In ALEKS calculator: 2*P(t &gt; 1.633 with df = 23)</p></li>
+<li><p>Even though the test statistic T = -1.633, the ALEKS calculator
+function provides the area for the right tail in this two-tailed test
+<em>(multiplication by 2)</em>. For this reason, you have to use the
+positive value.</p></li>
+<li><p>P-value = 0.116. Since P-value &gt; <span class="math inline">\(\alpha\)</span>, fail to reject Ho.</p></li>
+</ul>
+<hr />
+<p><strong>Exercise:</strong> Tardigrades, or water bears, are a type of
+micro-animal famous for their resilience. In examining the effects of
+radiation on organisms, an expert claimed that the amount of gamma
+radiation needed to sterilize a colony of tardigrades no longer has a
+mean of 1200 Gy (grays). (For comparison, humans cannot withstand more
+than 10 Gy.) A random sample of 21 tardigrade colonies found that the
+amount of gamma radiation needed to sterilize a colony had a sample mean
+of 1165 Gy, with a sample standard deviation of 63 Gy. Assume that the
+population of amounts of gamma radiation needed to sterilize a colony of
+tardigrades is approximately normally distributed.</p>
+<p>Complete the parts below to perform a hypothesis test to see if there
+is enough evidence, at the 0.10 level of significance, to support that
+<span class="math inline">\(\mu\)</span>, the mean amount of gamma
+radiation needed to sterilize a colony of tardigrades, is not equal to
+1200 Gy.</p>
+<p><em>a)</em> State the null hypothesis Ho and the alternative
+hypothesis <span class="math inline">\(H_1\)</span> that you would use
+for the test.</p>
+<ul>
+<li><p>Ho: <span class="math inline">\(\mu\)</span> = 1200</p></li>
+<li><p><span class="math inline">\(H_1: \mu \neq\)</span> 1200</p></li>
+</ul>
+<p><em>b)</em> Perform a hypothesis test. The test statistic has a t
+distribution (so the test is a “t test”). Here is some other information
+to help you with your test.</p>
+<ul>
+<li><p><span class="math inline">\(t_{0.05}\)</span> is the value that
+cuts off an area of 0.05 in the right tail.</p></li>
+<li><p>The value of the test statistic is given by <span class="math inline">\(t = \frac{\bar{X} -
+\mu}{S/\sqrt{n}}\)</span></p></li>
+</ul>
+<p>Step 1: Enter the number of degrees of freedom.</p>
+<ul>
+<li><p>
+df = n - 1 = 21 - 1 = 20
+</p></li>
+</ul>
+<p>Step 2: Select one-tailed or two tailed.</p>
+<ul>
+<li><p>
+Two-tailed
+</p></li>
+</ul>
+<p>Step 3: Enter the critical value(s). <em>(Round to 3 decimal
+places)</em></p>
+<ul>
+<li><p>Using ALEKS calculator, compute <span class="math inline">\(t_{0.05; df = 20}\)</span>.</p></li>
+<li><p><span class="math inline">\(t_{0.05; df = 20}\)</span> = 1.725.
+The critical values are -1.725 and 1.725</p></li>
+</ul>
+<p>Step 4: Enter the test statistic.</p>
+<ul>
+<li><p><span class="math inline">\(t = \frac{\bar{X} - \mu}{S/\sqrt{n}}
+= \frac{1165 - 1200}{63/\sqrt{21}}\)</span></p></li>
+<li><p>t = -2.546</p></li>
+</ul>
+<p><em>c)</em> Based on your answer to part (b), choose what can be
+concluded, at the 0.10 level of significance, about the claim made by
+the expert.</p>
+<ul>
+<li><p>Reject Ho</p></li>
+<li><p>Since the value of the test statistic lies in the rejection
+region, the null hypothesis is rejected. So, there is enough evidence to
+support the claim that the mean amount of gamma radiation needed to
+sterilize a colony of tardigrades is not equal to 1200 Gy.</p></li>
+</ul>
+<hr id="d17-2">
+<h1>
+Testing the Population Mean in R Studio
+</h1>
+<p><strong>How much is in that can?</strong> A machine that fills
+beverage cans is supposed to put 12 ounces of beverage in each can.
+Following are the amounts measured in a simple random sample of eight
+cans: 11.96, 12.10, 12.04, 12.13, 11.98, 12.05, 11.91, 12.03. Assuming a
+normal distribution for the amount of beverage dispensed by the machine,
+perform a hypothesis test to determine whether the mean volume differs
+from 12 ounces. Use the <span class="math inline">\(\alpha\)</span> =
+0.05 level of significance. What do you conclude?</p>
+<p><strong>Enter Data in R</strong></p>
+<blockquote>
+<p>Step 1: Open R GUI: library(Rcmdr)</p>
+</blockquote>
+<blockquote>
+<p>Step 2: Click on Data &gt; New data set &gt; Enter name for data set:
+<strong>cans</strong> &gt; OK</p>
+</blockquote>
+<blockquote>
+<p>Step 3: Click “Add row” fifteen times because there are 8
+observations.</p>
+</blockquote>
+<blockquote>
+<p>Step 4: Change the columns names from V1 to
+<strong>ounce</strong>.</p>
+</blockquote>
+<blockquote>
+<p>Step 5: Enter the corresponding data <em>(see above)</em> like you do
+in Excel. When you finish, click OK.</p>
+</blockquote>
+<p><strong>Compute the test</strong></p>
+<blockquote>
+<p>Step 6: Statistics &gt; Means &gt; Single-sample t-test</p>
+</blockquote>
+<blockquote>
+<p>Step 7: Select the variable: dist</p>
+</blockquote>
+<blockquote>
+<p>Step 8: Null Hypothesis: mu = 12 &gt; OK</p>
+</blockquote>
+<pre><code>
+    One Sample t-test
+
+data:  x
+t = 0.9726, df = 7, p-value = 0.3632
+alternative hypothesis: true mean is not equal to 12
+95 percent confidence interval:
+ 11.96422 12.08578
+sample estimates:
+mean of x 
+   12.025 </code></pre>
+<p><strong>Note:</strong> By default, R assumes a two-tailed test (not
+equal) with alpha 0.05. In addition, recall that alpha is 1 - confidence
+level. You may need to adjust these parameters according to the
+conditions in the exercise.</p>
+<hr />
 </div>
 
 
