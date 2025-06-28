@@ -1,0 +1,332 @@
+---
+title: "Review for Exam 3"
+date: "April 21, 2025"
+output:
+  xaringan::moon_reader:
+    css: "myCSS.css"
+    self_contained: true
+    chakra: "remark-latest.min.js"
+    nature:
+      countIncrementalSlides: false
+---
+
+
+
+Grand Sun Buffet is a large restaurant chain. After paying for a meal at Grand Sun Buffet, customers are asked to rate the quality of the food as a 1, 2, 3, 4, or 5, where a rating of 1 means "not good" and 5 means "excellent". The customers' ratings have a population mean of $\mu$ = 3.63, with a standard deviation of $\sigma$ = 1.65. Suppose that we will take a random sample of n = 8 customers' ratings. Let $\bar{X}$ represent the sample mean of the 8 customers' ratings. Consider the sampling distribution of the sample mean $\bar{X}$.
+
+Complete the following. Do not round any intermediate computations. Write your answers with two decimal places, rounding if needed. 
+
+
+(a) Find $\mu_{\bar{x}}$ (the mean of the sampling distribution of the sample mean).
+
+--
+
+
+- $\mu_{\bar{x}}$ = 3.63
+
+--
+
+(b) Find $\sigma_{\bar{x}}$ (the standard deviation of the sampling distribution of the sample mean).
+
+
+--
+
+- $\sigma_{\bar{x}} = \sigma/\sqrt{n}$
+
+--
+
+- $\sigma_{\bar{x}}$ = $1.65/\sqrt{8}$
+
+--
+
+- $\sigma_{\bar{x}}$ = 0.58
+
+
+---
+
+CorpPlus is a large corporation with many employees. You work for the human resources department of CorpPlus and want to estimate the population proportion of all employees who say the corporation is a great place to work. So, you will survey a random sample of 80 employees from CorpPlus and ask them whether they think the corporation is a great place to work.
+
+Follow the steps below to construct a 99% confidence interval for the population proportion of all employees who say the corporation is a great place to work.
+
+
+Great place to work | Number | Proportion
+----|----|----
+Yes | 68 | 0.85
+No | 12 | 0.15
+
+
+Enter the values of the sample size, the point estimate of the population proportion, and the critical value you need for your 99% confidence interval. *ALEKS: (Choose the correct critical value from the table of critical values provided.)*
+
+
+---
+
+Enter the values of the sample size, the point estimate of the population proportion, and the critical value you need for your 99% confidence interval. *ALEKS: (Choose the correct critical value from the table of critical values provided.)*
+
+
+Confidence Level | Critical Value
+----|----
+99% | $Z_{0.005}$ = 2.576
+95% | $Z_{0.025}$ = 1.960
+90% | $Z_{0.050}$ = 1.645
+
+--
+
+Sample Size (n)
+
+--
+
+- n = 80
+
+--
+
+Point Estimate $(\hat{p})$
+
+--
+
+- $\frac{68}{80}$ = 0.85
+
+---
+
+Critical Value (99%)
+
+--
+
+- $Z_{0.005}$ = 2.576
+
+--
+
+99% Confidence Interval for p
+
+--
+
+- Point estimate $\pm$ Margin of error
+
+--
+
+- Point estimate $\pm$ (Critical value)(Standard error for $\hat{p}$)
+
+--
+
+- $\hat{p} \pm Z_{0.005}\sqrt{\frac{\hat{p}(1 - \hat{p})}{n}}$
+
+--
+
+- $0.85 \pm (2.576)\sqrt{\frac{0.85(1 - 0.85)}{80}}$
+
+--
+
+- $0.85 \pm 0.103$
+
+
+--
+
+- Lower limit: 0.85 - 0.103 = 0.747
+
+--
+
+- Upper limit: 0.85 + 0.103 = 0.953
+
+
+---
+
+A researcher is going to perform a two-tailed hypothesis test. The test statistic will follow a **standard normal distribution.**
+
+(a) The researcher might choose 0.01, 0.05, or 0.10 for the level of significance for the two-tailed test. For each potential choice for the level of significance, find the critical values. *Round your answers to three decimal places.*
+
+--
+
+Critical values at $\alpha$ = 0.01
+
+--
+
+- In ALEKS calculator: $Z_{0.005}$
+
+--
+
+- $Z_{0.005}$ = 2.576. Because it is a two-tailed test, just specify the right tail $(\alpha/2)$ in the ALEKS calculator function.
+
+--
+
+- The Z critical values are -2.576 and 2.576
+
+--
+
+Critical values at $\alpha$ = 0.05 and $\alpha$ = 0.10
+
+--
+
+- When $\alpha$ = 0.05, compute in ALEKS $Z_{0.025}$. When $\alpha$ = 0.10, compute in ALEKS $Z_{0.050}$
+
+---
+
+After choosing the level of significance, the researcher takes a sample and finds that the value of the test statistic is Z = 2.495. For which of the levels of significance would the null hypothesis be rejected? Choose all that apply. 
+
+
+- $\alpha$ = 0.01
+
+- $\alpha$ = 0.05
+
+- $\alpha$ = 0.10
+
+- None of the above
+
+--
+
+- Ho is going to be rejected for those rejection regions that contain the test statistic Z = 2.495.
+
+--
+
+- When $\alpha$ = 0.05, $(-\infty, -1.96)$ and $(1.96, \infty)$
+
+- When $\alpha$ = 0.10, $(-\infty, -1.645)$ and $(1.645, \infty)$
+
+
+
+---
+
+
+
+
+---
+
+---
+
+At your college, there is a school-sponsored website that matches people looking for roommates. The school claims that 34% of students will find a match their first time using the site. You are a writer for the school newspaper and are suspicious of the claim. To test it, you decide to perform a hypothesis test. To do so, you choose a random sample of 170 students who visited the site looking for a roommate. Of the students surveyed, 51 said they found a match their first time using the site.
+
+(a) You confirm that it is appropriate to perform a Z-test. 	
+
+--
+
+- Why is a Z-test appropriate?
+
+--
+
+- The Z-test for p is valid for **LARGE** samples only.
+
+--
+
+- The sample is large if $np_o \geq 10$ and $n(1 - p_o) \geq 10$
+
+--
+
+- State the Hypotheses: Ho: p = 0.34 and $H_1: p \neq$ 0.34
+
+--
+
+- Checking Assumptions for a large sample: $np_o$ = (170)(0.34) = 57.8 and $n(1 - p_o)$ = (170)(0.66) = 112.2
+
+--
+
+- Therefore, a Z-test is appropriate.
+
+---
+
+(b) Find Z, the value of the test statistic for your Z-test. Round your answer to three or more decimal places. 
+
+--
+
+- $Z = \frac{\hat{p} - p_o}{\sqrt{\frac{p_o(1 - p_o)}{n}}}$
+
+--
+
+- Sample proportion, $\hat{p}$ = 51/170 = 0.3
+
+--
+
+- $Z = \frac{0.3 - 0.34}{\sqrt{\frac{0.34(1 - 0.34)}{170}}}$
+
+--
+
+- Z = -1.101
+
+
+---
+
+Tardigrades, or water bears, are a type of micro-animal famous for their resilience. In examining the effects of radiation on organisms, an expert claimed that the amount of gamma radiation needed to sterilize a colony of tardigrades no longer has a mean of 1200 Gy (grays). (For comparison, humans cannot withstand more than 10 Gy.) A random sample of 21 tardigrade colonies found that the amount of gamma radiation needed to sterilize a colony had a sample mean of 1165 Gy, with a sample standard deviation of 63 Gy. Assume that the population of amounts of gamma radiation needed to sterilize a colony of tardigrades is approximately normally distributed.
+
+Complete the parts below to perform a hypothesis test to see if there is enough evidence, at the 0.10 level of significance, to support that $\mu$, the mean amount of gamma radiation needed to sterilize a colony of tardigrades, is not equal to 1200 Gy.
+
+--
+
+(a) State the null hypothesis Ho and the alternative hypothesis $H_1$ that you would use for the test.
+
+--
+
+- Ho: $\mu$ = 1200
+
+--
+
+- $H_1: \mu \neq$ 1200
+
+---
+
+(b) Perform a hypothesis test. The test statistic has a t distribution (so the test is a "t test"). Here is some other information to help you with your test.
+
+- $t_{0.05}$ is the value that cuts off an area of 0.05 in the right tail.
+
+- The value of the test statistic is given by $t = \frac{\bar{X} - \mu}{S/\sqrt{n}}$
+
+
+--
+
+
+Step 1: Enter the number of degrees of freedom.
+
+--
+
+- df = n - 1 = 21 - 1 = 20
+
+--
+
+Step 2: Select one-tailed or two tailed.
+
+--
+
+- Two-tailed
+
+--
+
+Step 3: Enter the critical value(s). *(Round to 3 decimal places)*
+
+--
+
+- Using ALEKS calculator, compute $t_{0.05; df = 20}$.
+
+--
+
+- $t_{0.05; df = 20}$ = 1.725. The critical values are -1.725 and 1.725
+
+
+---
+
+Step 4: Enter the test statistic.
+
+--
+
+- $t = \frac{\bar{X} - \mu}{S/\sqrt{n}} = \frac{1165 - 1200}{63/\sqrt{21}}$
+
+--
+
+- t = -2.546
+
+--
+
+(c) Based on your answer to part (b), choose what can be concluded, at the 0.10 level of significance, about the claim made by the expert.
+
+--
+
+- Reject Ho
+
+--
+
+- Since the value of the test statistic lies in the rejection region, the null hypothesis is rejected. So, there is enough evidence to support the claim that the mean amount of gamma radiation needed to sterilize a colony of tardigrades is not equal to 1200 Gy.
+
+---
+
+
+
+
+
+
+
+

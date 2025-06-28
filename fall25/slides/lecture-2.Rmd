@@ -1,0 +1,439 @@
+---
+title: "R and ALEKS Calculator"
+date: "January 30, 2025"
+output:
+  xaringan::moon_reader:
+    css: "myCSS.css"
+    chakra: "remark-latest.min.js"
+    self_contained: true
+    nature:
+      countIncrementalSlides: false
+---
+
+# The Statistical Software
+
+--
+
+**R** is the name of the statistical software for Data Days and the Independent Project. 
+
+--
+
+- In the Lab, R  is installed in all computers. Click the R icon on the desktop.
+
+--
+
+- If you plan to use R at home, 
+<a href="https://cran.r-project.org/" target="_blank" style="font-size:18px;"> click here</a>
+to download the correct version for your system.
+
+
+---
+
+<h1> Basic Exploration of R - GUI </h1>
+
+--
+
+GUI stands for Graphical User Interface. We are going to use a "point-and-click" version of R for data analysis.
+
+--
+
+**START THE R - GUI**
+
+--
+
+> Step 1: Open R. Double click on the R icon in your desktop.
+
+--
+
+> Step 2: In the R  console, type **library(Rcmdr)**. Then, hit ENTER.
+
+---
+
+A new window will open. This is R - GUI  for data analysis. 
+
+```{r comment=NA, echo=FALSE, out.width="100%", fig.align='center'}
+
+knitr::include_graphics("~/Hunter College Dropbox/Alejandro Falchettore/notes113/charts/Rcmd-fig1.png")
+
+```
+
+---
+
+In the **R SCRIPT** window, type one of the following expressions. Then, select it and click on SUBMIT.
+
+
+- 2 + 3
+
+
+- 2 + 3 * 5
+
+
+- (2 + 3) * 5
+
+
+- log(5)
+
+
+- 6^2
+
+
+- exp(3)
+
+
+- sin(pi/2)
+
+
+You can clear the window, by right click and selecting the option.
+
+
+---
+
+<h1> Exploring Data in R </h1>
+
+Data tables in R are known as  **DATA FRAMES**. One of many data frames available in the R system is **mtcars**.
+
+--
+
+**OPEN DATA**
+
+In the top menu, click on: 
+
+--
+
+> Step 1: DATA > DATA IN PACKAGES > Read data set from an attached package ...
+
+--
+
+> Step 2: In the box "Enter name of data set", type **mtcars**. Then click OK.
+
+--
+
+> Step 3: Click on **View data set** to display the "mtcars" data table.
+
+---
+
+Answer the following questions about the data frame **mtcars**:
+
+1) How many variable can you identify?
+
+2) How many cars (or observations) were reported?
+
+3) List any numeric (or quantitative) variables?
+
+4) What variables can be considered categorical (or qualitative)? Explain if any?
+
+
+
+---
+
+<h1>  ALEKS Resources </h1>
+
+
+```{r comment=NA, echo=FALSE, out.width="100%", fig.align='center'}
+
+knitr::include_graphics("~/Hunter College Dropbox/Alejandro Falchettore/notes113/charts/aleks_calc3.jpg")
+
+```
+
+
+
+---
+
+
+**ALEKS Calculator**
+
+
+```{r comment=NA, echo=FALSE, out.width="25%", fig.align='center'}
+
+knitr::include_graphics("~/Hunter College Dropbox/Alejandro Falchettore/notes113/charts/ALEKS_calc.png")
+
+```
+
+
+---
+
+Below, you find a brief description and use of all functions available in the ALEKS Calculator that you are going to use during this semester.
+
+
+$\sum x$: Add all numeric data values (total).
+
+- For example,  2 + 3 + 7 + 1 = 13
+
+- In ALEKS: sum(2, 3, 7, 1)
+
+$\sum x^2$: Add the square of all numeric data values.
+
+- For example, $2^2 + 3^2 + 7^2 + 1^2 = 63$
+
+- In ALEKS: sumsq(2, 3, 7, 1)
+
+---
+
+
+$\bar{X}$: Compute the sample mean. $\bar{X}$ is read as **X-bar**.
+
+- For example, (2 + 3 + 7 + 1)/4 = 3.25
+
+- In ALEKS, mean(2, 3, 7, 1)
+
+- $\bar{X} = \frac{1}{n}\sum x$
+
+
+- $\sum x = n \bar{X}$
+
+
+$S_x$: Compute the sample standard deviation.
+
+
+- For example, $\sqrt{\frac{(2 - 3.25)^2 + (3 - 3.25)^2 + (7 - 3.25)^2 + (1 - 3.25)^2}{4 - 1}} = 2.6299556397$
+
+- In ALEKS, stdev(2, 3, 7, 1)
+
+
+- S = $\sqrt{S^2}$
+
+
+- $S^2$ is known as the *sample* variance.
+
+
+- By definition, $S^2$ = $\frac{1}{n - 1}\sum(x_i - \bar{X})^2$
+
+---
+
+- $\sum(x_i - \bar{X})^2$ = $(n - 1)S^2$
+
+
+- There is also the **population variance**, $\sigma^2$. The $\sigma$ is read as **sigma**.
+
+
+- By definition, $\sigma^2$ = $\frac{1}{n}\sum(x_i - \bar{X})^2$ = $\frac{n - 1}{n}S^2$
+
+
+- Before using these formulas, check if your data set represents a **sample** or **population**.
+
+
+**Sort**: Sort numeric data values in ascending order.
+
+
+- For example, order 2, 3, 7, 1 to 1, 2, 3, 7
+
+
+---
+
+[],[],...: Add blank spaces to enter data values.
+
+
+**(**: Open parenthesis. Useful when combining mathematical operations of defining data set.
+
+
+**)**: Close parenthesis. Useful when combining mathematical operations of defining data set.
+
+$\sqrt{x}$: Compute the square root of a non-negative number.
+
+
+- For example, $\sqrt{9}$ = 3
+
+**n!**: Compute the factorial of a whole number.
+
+- For example, 5! = 120
+
+- 5! is read as **5 factorial**. 5! = 1 x 2 x 3 x 4 x 5
+
+---
+
+**log**: Compute the logarithm in base 10 of a number greater than 0.
+
+
+- For example, log(3) = 0.47712125472
+
+
+**ln**: Compute the natural logarithm of a number greater than 0.
+
+
+- For example, ln(3) = 1.0986122887
+
+
+$_nP_r$: Compute a permutation. Total number of "ordered" selections of **r** units from **n**.
+
+
+- For example, $_5P_2$ = $\frac{5!}{(5 - 2)!}$ = 20
+
+
+$_nC_r$: Compute the combination. Total number of selections of **r** units from **n**. The order is NOT important. The symbol $_nC_r$ is read as "n choose r".
+
+
+- For example, $_5C_2$ = $\frac{5!}{2!(5 - 2)!}$ = 10
+
+
+---
+
+$10^x$: Compute 10 to the x power.
+
+
+- For example, $10^3$ = 1000
+
+
+$e^x$: Compute e to the x power.
+
+
+- For example, $e^3$ = 20.085536923
+
+
+**Z**: Compute the Z value corresponding to the right tail area in the Standard Normal Distribution.
+
+
+- For example, $Z_{0.025}$ = 1.9599639822
+
+
+**t**: Compute the T value corresponding to the right tail area in the T Distribution with k degrees of freedom.
+
+
+- For example, $t_{0.025, df=8}$ = 2.3060041108
+
+---
+
+$X^2$: Compute the $X^2$ value corresponding to the right tail area in the Chi-Squared Distribution with k degrees of freedom.
+
+
+- For example, $X^2_{0.025, df=8}$ = 17.53454614
+
+
+**F**: Compute the F value corresponding to the right tail area in the F Distribution with k and l degrees of freedom.
+
+
+- For example, $F_{0.025, df1=8, df2=5}$ = 6.7571720076
+
+
+**P(Z < [])**: Compute area to the left of a Z value in the Standard Normal Distribution.
+
+
+- For example, $P(Z \leq 1.5)$ = 0.93319279873
+
+
+**P(t > [])**: Compute area to the right of a T value in the T Distribution with k degrees of freedom.
+
+
+- For example, P(T > 1.5, df=8) = 0.086001645976
+
+---
+
+
+$P(X^2$ > []): Compute area to the right of a $X^2$ value in the Chi-Squared Distribution with k degrees of freedom.
+
+
+- For example, $P(X^2 > 10.5, df=8)$ = 0.23166973811
+
+
+
+P(F > []): Compute area to the right of a F value in the F Distribution with k and l degrees of freedom.
+
+
+- For example, P(F > 10.5, df1=8, df2=5) = 0.0095561813
+
+
+P(B_,_ $\leq$ []): Compute the total probability of values at or below specific number in the binomial distribution with parameters n and p.
+
+
+- For example, $P(B_{10},_{0.65} \leq 7)$ = 0.73839260862
+
+- $P(B_{10},_{0.65} \leq 7)$ = p(0) + p(1) + p(2) + .... + p(7)
+
+
+---
+
+
+$x^y$: Raise x to the y power.
+
+- For example, $2^5$ = 32
+
+
+$\pm$: Assign symbol positive of negative to a number.
+
+
+$\pi$: Pi number, 3.1415926536
+
+
+
+---
+
+
+---
+
+
+### Variables in Data Frames
+
+--
+
+In this activity, you are going to work with the data frame **sleep**.
+
+--
+
+In the R Script, type and run **help(sleep)** to display the documentation related to this data frame.
+
+--
+
+*a)* How many variables can you identify in **sleep**?
+
+--
+
+- Three variables
+
+--
+
+*b)* What variables are quantitative (or numeric)?
+
+--
+
+- One variable: *extra*
+
+--
+
+*c)* What variables are categorical (or qualitative)?
+
+--
+
+- Two variables: *group* and *ID*
+
+
+---
+
+
+*d)* Identify the type of variables in the data set **chickwts**.
+
+--
+
+- Quantitative: *weight*
+
+--
+
+- Categorical: *feed*
+
+--
+
+**IMPORTANT:**
+
+--
+
+Everything in R is CASE SENSITIVE.
+
+--
+
+Variables in data frames are accessed with the DOLLAR sign. For example, run: *sleep$extra*.
+
+--
+
+The function **class()** returns the type of object in R. For example, run the following:
+
+--
+
+- **class(sleep)**
+
+--
+
+- **class(sleep$ID)**
+
+--
+
+- **class(sleep$extra)**
+
+

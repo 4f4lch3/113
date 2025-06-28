@@ -1,0 +1,156 @@
+---
+title: "Back-to-Back Stemplot"
+date: "March 3, 2025"
+output:
+  xaringan::moon_reader:
+    css: "myCSS.css"
+    chakra: "remark-latest.min.js"
+    self_contained: true
+    nature:
+      countIncrementalSlides: false
+---
+
+
+
+### The Stem Plot 
+
+--
+
+Stem plots or Stem-and-Leaf plots are a simple way to display small data sets of quantitative type.
+
+--
+
+In a stem-and-leaf plot, the rightmost digit is the leaf, and the remaining digits from the stem. For example, if a data value is 14, then 1 is the stem and 4 the leaf.
+
+--
+
+Open the data frame **mtcars** and display the stem-and-leaf plot for the variable **mpg**
+
+> Graphs > Stem-and-leaf display > Select variable: mpg
+
+> Select the **Options** tab and choose Parts Per Stem: 1
+
+> Change Leafs Digits: 0.1 *(move slider to the left)* > OK
+
+---
+
+```{r comment=NA, echo=F}
+
+library(aplpack)
+stem.leaf(mtcars$mpg, unit=0.1, m=1)
+
+```
+
+---
+
+**Some Observations:**
+
+--
+
+- The first stem and leaf, 10|44, indicates two data values: 10.4 and 10.4. The minimum is 10.4. It is a coincidence that two cars have the same mpg. Similarly, the last stem, 33|9, represents the maximum data value 33.9. 
+
+--
+
+- Similar to the histogram, the stem-and-leaf plot displays the distribution of a quantitative data, with the difference that you can visualize now each data value and  identify the minimum and maximum.
+
+--
+
+- In this version of stem-and-leaf plot, you can identify the location of the median. The numbers on the left column to the stem indicate the data count. The one in parenthesis (3) show the location of the median in that particular stem.
+
+--
+
+- The stem-and-leaf plot can also reveal skewness, modes and range.
+
+
+---
+
+
+### The Back-to-Back Stem Plot 
+
+--
+
+When two data sets have values similar enough so that the same stems can be used, we can compare their shapes with a **back-to-back stem-and-leaf plot**.
+
+--
+
+In a back-to-back stem-and-leaf plot, the stems go down the middle. The leaves for one of the data sets go off to the right, and the leaves for the other go off to the left.
+
+--
+
+Consider the data frame *CO2*. Display the back-to-back stem-and-leaf plot for the variable **uptake** by **treatment**.
+
+--
+
+> Open in R GUI the data frame **CO2**.
+
+> Graph > Stem-and-leaf displays > select Variable: uptake
+
+> Click on Plot back-to-back by > Groups variable: Treatment > OK
+
+> Click in the **Options** tab > Parts Per Stem: 1 > OK
+
+
+---
+
+
+```{r comment=NA, echo=F}
+
+stem.leaf.backback(CO2$uptake[CO2$Treatment=="nonchilled"], CO2$uptake[CO2$Treatment=="chilled"], unit=1, m=1)
+
+```
+
+---
+
+**Some Observations:**
+
+--
+
+- The leaves to the left of the stem represent the uptake data for the nonchilled treatment. The uptake data for the chilled are on the right.
+
+--
+
+- Only the chilled treatment have uptake data, 0|79. It represents the values 7 and 9. The minimum intake for chilled treatment is 7. For the unchilled treatment, the minimum is 10. The maximum values are 49 and 42 for nonchilled and chilled treatments.
+
+--
+
+- The of carbon dioxide rates seem to be affected at different temperature conditions. At room temperature, the CO2 rates is about 32 $\mu mol/m^2$ sec. However, it drops approximately to 18 $\mu mol/m^2$ sec on chilled conditions. The variability of CO2 readings are also significant. Level of CO2 lower than 30 $\mu mol/m^2$ are commonly associated to chilled conditions, and more than 30 to room temperature. As a consequence, ....
+
+
+---
+
+### Activity 
+
+--
+
+Display a Back-to-Back Stem plot to compare the uptake distribution by origin of the plant *(Type)*.
+
+```{r comment=NA, echo=F}
+
+stem.leaf.backback(CO2$uptake[CO2$Type=="Quebec"], CO2$uptake[CO2$Type=="Mississippi"], unit=1, m=1)
+
+```
+
+--
+
+For each plant location, find the carbon dioxide rate minimum, maximum, range, and median.
+
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

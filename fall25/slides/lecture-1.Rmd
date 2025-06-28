@@ -1,0 +1,134 @@
+---
+title: "Elementary Probability and Statistics"
+subtitle: "Stat 113 - Section 1"
+institute: "Hunter College, CUNY"
+output:
+  xaringan::moon_reader:
+    css: "myCSS.css"
+    chakra: "remark-latest.min.js"
+    self_contained: true
+    nature:
+      countIncrementalSlides: false
+---
+
+## Elementary Probability and Statistics
+
+
+### Stat 113 - Section 1
+
+### Room: HN 305 (In Person)
+
+### Schedule: Monday and Thursday (8:30am - 9:45am)
+
+--
+
+<br>
+
+
+- **Instructor:**  Alejandro Falchettore 
+
+- **email:** afalche@hunter.cuny.edu
+
+- **Office Hours (ZOOM - By appointment)** Monday: 1:00 - 2:00 pm
+
+
+---
+
+
+### ALEKS Registration
+
+--
+
+- Access ALEKS: https://www.aleks.com
+
+--
+
+- Click on **SIGN UP**.
+
+--
+
+- ALEKS Class Code (For Registration Only): **YPW6Y-AM9FR**
+
+--
+
+- TEMPORARY Financial Aid Access Code (two-week trial): <br> **877C4-767A2-65E47-5B802**
+
+--
+
+- The Financial Aid Access Code gives you temporary access to ALEKS for a two-week period. Once the code expires, you will be locked out of your ALEKS account until you purchase a regular Student Access Code. It is highly recommended that you purchase the Student Access Code BEFORE the two weeks expire to prevent interruptions with your ALEKS account. The Financial Aid Access Code does not add an additional two weeks to your account. 
+
+--
+
+- DO NOT FORGET your username and password.
+
+
+
+---
+
+
+---
+
+
+### Grading (Overview)
+
+--
+
+- ALEKS Modules Completion by due date (25 pts) and by last day (10 pts)
+
+- ALEKS Post-Module and Final Knowledge Checks (7 pts)
+
+- Exams *(midterms)* (30 pts): **1 to 4**
+
+- Final Exam (10 pts)
+
+- Data Days: **1 to 4** (20 pts)
+
+- Extra credit (5 pts)
+
+--
+
+**IMPORTANT:** 
+
+--
+
+- Students attempting **A or A+** must complete the independent project.
+
+--
+
+- Use of your cell phone is prohibited during class sessions. *(Syllabus page 7)* 
+
+
+---
+
+
+--
+
+**Class Requirements** 
+
+--
+
+- Good organization of your schedule. **READ** the syllabus carefully.
+
+--
+
+- BLACKBOARD for communication, data days, and ALEKS.
+
+
+--
+
+**Course Organization**: ALEKS, *learning platform*,  (82 pts) + Data Days (20 pts) + Dolciani Math Learning Center (5 pts)
+
+--
+
+- In ALEKS, you **self-study** basic concepts by reading and solving problems.
+
+--
+
+- In class, you will learn about the statistical software for data analysis.
+
+--
+
+- Mark the due dates in your calendar. No extensions, no excuses, no exceptions.
+
+
+

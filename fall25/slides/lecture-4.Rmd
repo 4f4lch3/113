@@ -1,0 +1,258 @@
+---
+title: "Introduction to Data Day 1"
+date: "February 6, 2025"
+output:
+  xaringan::moon_reader:
+    css: "myCSS.css"
+    chakra: "remark-latest.min.js"
+    self_contained: true
+    nature:
+      countIncrementalSlides: false
+---
+
+
+
+### Numeric Summary of Quantitative Data
+
+--
+
+Quantitative data is best summarized with the five-number summary and the mean.
+
+--
+
+- The five-number summary are the minimum, first quartile, median, third quartile and maximum.
+
+--
+
+- The median is the number located in the middle of the sorted data. Therefore, half of the data is below the *median* and the other half above.
+
+--
+
+- The first quartile, *(Q1)*, is a number with one quarter (or 25%) of the data below and 75% above.
+
+--
+
+- Similarly, the third quartile, *(Q3)*, is a number with three quarter (or 75%) of the data below and 25% above.
+
+---
+
+In R, display the numeric summary of the variable **weight** in the data frame **chickwts**.
+
+> Step 1: Open R
+
+> Step 2: In R Console, type **library(Rcmdr)**, and hit ENTER.
+
+Go to Step 5 if data is already opened
+
+> Step 3: Open data, click on DATA > DATA IN PACKAGES > Read data set from an attached package
+
+> Step 4: Enter name of data set: **chickwts**
+
+> Step 5: Click on STATISTICS > SUMMARIES > NUMERICAL SUMMARIES
+
+> Step 6: Select the variable **weight** and hit OK
+
+--
+
+<br>
+
+```{r comment=NA, echo=F, message=F, warning=F}
+
+library(Rcmdr)
+numSummary(chickwts[,"weight", drop=F], statistics=c("mean","sd","IQR","quantiles"), quantiles=c(0,0.25,0.5,0.75,1))
+
+```
+
+---
+
+Answer the following questions:
+
+- What is the weight range in the sample?
+
+
+- What is the approximate weight of the heavier chicken in the sample?
+
+
+- What is the average weight?
+
+
+- Are there chicken with unusual weight?
+
+
+- Do the feed supplements help these chicken to growth fast?
+
+
+---
+
+### Graphical Summary of Quantitative Data
+
+--
+
+Plots of quantitative data help to visualize the distribution and unusual observations.
+
+--
+
+**HISTOGRAM**
+
+
+- **Histograms** display the shape of the data distribution *(symmetry, skewness, modes)*.
+
+
+- Histograms are similar to bar charts. Each bar is a **class intervals** with height equal to the interval's frequency. *(Frequency histogram)*
+
+> In R, click on GRAPHS >  HISTOGRAM. Select variable. Choose the OPTION tab to add axes labels and title. Hit OK.
+
+---
+
+**BOX PLOT**
+
+
+- A **Box plot** complements the histogram with the visualization of the five-number summary.
+
+
+- Box plots are effective for the identification of **outliers** *(unusual observations)*
+
+> In R, click on GRAPHS > BOXPLOT. Select variable. Choose the OPTION tab to add axes labels and title. Hit OK.
+
+
+
+---
+
+
+```{r comment=NA, fig.align='center', fig.width=7, fig.height=5, echo=F}
+
+hist(chickwts$weight, 
+        main="Frequency Histogram of Chicken Weight", 
+        xlab="Weight (g)", ylab="Frequency")
+
+```
+
+
+---
+
+```{r comment=NA, fig.align='center', fig.width=6, fig.height=5, echo=F}
+
+boxplot(chickwts$weight, 
+        main="Box plot of Chicken Weight", 
+        xlab=NULL, ylab="Weight (g)")
+
+```
+
+
+
+---
+
+### Introduction to Data Day 1
+
+--
+
+Step 1: Start R GUI
+
+--
+
+- Open R and type **library(Rcmdr)** in the R Console. Hit ENTER to lunch the R GUI.
+
+--
+
+Step 2: Prepare your MS Word document.
+
+--
+
+- In **Word** document, click on the INSERT > Header > Three Column Header
+
+--
+
+- On each column type: *your name*, *Section 1*, and your instructor name, *A. Falchettore*. 
+
+--
+
+- Save your Word document (FILE > SAVE AS) with the following format: your last name, your first initial, your student ID number, and the letters DD1. 
+
+--
+
+- So, if you are Sue Jones ID 99999999, your document would be saved as **joness99999999DD1**
+
+--
+
+Step 3: Access Brightspace and read the project instructions **BEFORE** downloading the data file for analysis
+
+
+---
+
+### Importing Data to R Studio (Practice)
+
+--
+
+There is a link to the **sleep** data set in BRIGHTSPACE. Download file **ONLY**. DO NOT OPEN.
+
+- In R, click on DATA > IMPORT DATA > FROM EXCEL FILE. Write a name for the data set and hit OK.
+
+- Browse your data and click OK.
+
+
+---
+
+### Instructions: 
+
+--
+
+Today, you are going to do two main things:
+
+--
+
+- Look at all the variables. Choose *ONE* quantitative and *ONE* categorical variables. Inspect them (*TWO* in total) using R. Describe each one as thoroughly as you can. *(Number of variables in actual Data Day 1 are different)*
+
+--
+
+- Tell me what question (for each of the chosen variables) you think was asked to result in the answers that were given.
+
+--
+
+The description for each variable should have this format:
+
+- Name of Variable.
+
+- Question that could have been asked to obtain the responses in this variable.
+
+- Description of tables and charts in layman terms.
+    
+- Paste summary tables and charts from R Studio.
+
+---
+
+**Taking Screenshots of Tables and Charts**
+
+
+- On the keyboard, press simultaneously the keys: **Windows Logo**, **Shift**, **S**.
+
+
+- Select the area to take the screenshot.
+
+
+- Paste in MS Word.
+
+
+---
+
+
+**Recommendations (Data Day)**
+
+
+- Read the instructions CAREFULLY. Ask questions if something is not clear.
+
+
+- Review all lecture notes and use them as reference.
+
+
+- The key is to describe your results for somebody who does not understand statistics.
+
+
+- Add title and labels to any chart in your report.
+
+
+- Save your work OFTEN. Double check if your document was uploaded in BRIGHTSPACE correctly.
+
+
+- Be organized and avoid any eventuality like slow computers, internet, or office 365.
+
+

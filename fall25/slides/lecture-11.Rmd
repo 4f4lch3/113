@@ -1,0 +1,247 @@
+---
+title: "Introduction to Data Day 2"
+date: "March 13, 2025"
+output:
+  xaringan::moon_reader:
+    css: "myCSS.css"
+    self_contained: true
+    chakra: "remark-latest.min.js"
+    nature:
+      countIncrementalSlides: false
+---
+
+
+### Get Your Document Ready
+
+--
+
+Step 1: Open MS Word
+
+- Start a blank document
+
+
+- Click on INSERT > Header > Three Column Header
+
+
+- Type your name, section, and instructor name *(A. Falchettore)* in the Header.
+
+--
+
+Step 2: Save your Document
+
+- FILE > SAVE AS
+
+- Use the following format: your last name, your first initial, your student ID number, DD2. For example, if I am Sue Jones ID 99999999, my document would be saved as **joness99999999DD2**
+
+
+---
+
+### Get your Data Ready
+
+--
+
+Step 3: Access Brightspace > Data Day
+
+- <p> Download the data file, but do not open it. </p>
+
+--
+
+Step 4: Start R GUI
+
+- <p> library(Rcmdr) </p>
+
+--
+
+Step 5: Import data
+
+- <p> Data > Import data > from Excel file </p>
+
+--
+
+Step 6: Read the instructions carefully and save often.
+
+---
+
+
+### The Edgar Anderson's Iris Data
+
+
+This famous *(Fisher's or Anderson's)* iris data set gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica.
+
+
+
+```{r comment=NA, echo=FALSE, fig.align='center', out.width="100%"}
+
+library(knitr)
+
+include_graphics("../charts/iris.png")
+
+```
+
+
+
+**Petal:** One of the colored leaf-shaped parts of a flower.
+
+**Sepal:** One of the small leaves that contains a young flower before the flower opens, and which stays directly under the flower.
+
+
+---
+
+**Open Data in R**
+
+- Data > Data in packages > Read data set from an attached package
+
+- Enter name of data set: **iris**
+
+--
+
+**Part A:** Choose one pair of variables. Make one scatterplot, calculate the correlation coefficient; then write one paragraph explaining the relationship, using your calculated correlation coefficient, and saying why you believe the relationship is a causal one *(one variable explains the data in the second variable)* or why you think the 'relationship' is not causal--that is, that there is another reason for the apparent relationship. If there is NO obvious relationship, explain why that is true.
+
+
+--
+
+The following output compares the flower sepal *(quantitative)* and petal length *(quantitative)*.
+
+- Graphs > Scatterplot
+
+- Choose x-variable: **Sepal.length**
+
+- Choose y-variable: **Petal.Length** > Click OK
+
+---
+
+
+```{r comment=NA,  fig.align='center', echo=F}
+
+plot(Petal.Length ~ Sepal.Length, data = iris, xlab="Sepal (cm)", ylab="Petal (cm)", main="Part of Iris Flower Length", pch=19)
+
+```
+
+
+**Important:** Click on the OPTIONS tab to add axes labels and plot title. 
+
+
+---
+
+
+Compute the correlation coefficient:
+
+- Statistics > Summaries > Correlation matrix
+
+- Press the **Ctrl** and choose the variables: **Sepal.Length** and **Petal.Length**
+
+- Click OK
+
+--
+
+```{r comment=NA, echo=F}
+
+# Compute the correlation coefficient
+cor(iris$Sepal.Length, iris$Petal.Length)
+
+
+```
+
+
+**Explain these results here**
+
+
+---
+
+
+**Part B:** Choose a second pair of variables. Make one graph showing side-by-side boxplot; then write one paragraph describing their relationship using the appropriate measures of center and spread and position, along with any skewing or outliers.
+
+--
+
+The following output compares the flower sepal length *(quantitative)*  and specie type *(categorical)*
+
+
+- Graphs > Boxplot > Variable: **Sepal.Length**
+
+- Plot by groups > Group variable: **Species** > OK > OK
+
+
+**Important:** Click on the OPTIONS tab to add axes labels and plot title.
+
+
+---
+
+```{r comment=NA, fig.align='center', echo=F}
+
+boxplot(Sepal.Length ~ Species, data = iris, xlab = "Specie", ylab = "Sepal (cm)", main = "Comparing Sepal Length by Iris Type", col = "yellow")
+
+
+```
+
+---
+
+Numeric summary of Sepal length by specie
+
+
+- Statistics > Summaries > Numerical summaries
+
+- Variables: **Sepal.Length**
+
+- Summarize by groups > Groups variable: **Species** > OK > OK
+
+--
+
+```{r comment=NA, echo=F}
+
+# Compute summary statistics by species type
+tapply(iris$Sepal.Length, iris$Species, summary)
+
+```
+
+
+
+
+**Write description here**
+
+
+
+---
+
+**Part C:** Choose a third pair of variables and create one graph showing back-to-back stemplots; then write one paragraph describing their relationship using the appropriate measures of center and spread and position, along with any skewing or outliers.
+
+--
+
+The following output compares the flower petal length *(quantitative)*  and specie type *(categorical)*
+
+
+--
+
+- Data > Active data set > Subset active data set 
+
+- Subset expression: **Species=="setosa" | Species=="virginica"** > OK > Yes
+
+- Data > Manage variables in active data set > Drop unused factor levels
+
+- Factor: **Species** > OK > OK
+
+- Graphs > Stem-and-leaf display > Variable: **Petal.Length**
+
+- Plot back-to-back by > Groups variable: **Species** > OK
+
+
+---
+
+
+```{r comment=NA, echo=F, warning=F}
+
+library(aplpack)
+
+petal_type <- split( iris$Petal.Length, iris$Species )
+
+stem.leaf.backback(petal_type[[1]], petal_type[[3]], m=1, show.no.depths = T)
+
+
+
+```
+
+
+
+**Write description here**
+
+---
+

@@ -1,0 +1,333 @@
+---
+title: "Introduction to Data Day 4"
+date: "May 2, 2024"
+output:
+  xaringan::moon_reader:
+    css: "myCSS.css"
+    self_contained: true
+    chakra: "remark-latest.min.js"
+    nature:
+      countIncrementalSlides: false
+---
+
+
+## Introduction to Data Day 4 
+
+--
+
+Analysis of TWO variables
+
+--
+
+For example, using the data frame **Orange** *(Run help(Orange))*, determine the answer to the following question: 
+
+--
+
+- Is trunk circumference related to the age of the tree? That is, do trees with large (or short) circumferences are much older? 
+
+--
+
+Step 1: Inspect the type of variables.
+
+--
+
+- What type of variables are *circumference* and *age*?
+
+--
+
+Step 2: Identify the appropriate type of analysis.
+
+--
+
+- Since *circumference* and *age* are quantitative, use scatterplot, correlation, and least-squares regression.
+
+
+---
+
+### Scatterplot
+
+--
+
+```{r comment=NA, eval=FALSE}
+
+plot(age ~ circumference, data = Orange)
+
+```
+
+--
+
+```{r comment=NA, echo=FALSE, fig.align='center', fig.height=6}
+
+plot(age ~ circumference, data = Orange)
+
+```
+
+---
+
+Add labels and improve visualization
+
+
+--
+
+```{r comment=NA, eval=FALSE}
+
+plot(age ~ circumference, data = Orange, pch=19, xlab="Circunference (mm)",
+     ylab="Age (Days)", main = "Grow of Orange Trees", col="blue")
+
+```
+
+--
+
+```{r comment=NA, echo=FALSE, fig.align='center', fig.height=6}
+
+plot(age ~ circumference, data = Orange, pch=19, xlab="Circunference (mm)", ylab="Age (Days)", main = "Grow of Orange Trees", col="blue")
+
+```
+
+
+---
+
+### Assessment of the Linear Association
+
+--
+
+Compute the correlation coefficient (r) to measure the linear association between TWO quantitative variables.
+
+--
+
+```{r comment=NA, eval=FALSE}
+
+cor(Orange$age, Orange$circumference)
+
+```
+
+--
+
+```{r comment=NA, echo=FALSE}
+
+cor(Orange$age, Orange$circumference)
+
+```
+
+--
+
+- The correlation coefficient is positive and close to 1.
+
+
+--
+
+- There is a strong positive linear association between *circumference* and *age*.
+
+--
+
+- Old trees have the tendency to have large width.
+
+--
+
+A large correlation coefficient suggest the use of a linear model to describe the linear trend between *circumference* and *age*.
+
+--
+
+Before, it is important to identify which variable is the response (y) and predictor (x).
+
+
+---
+
+### Fitting the linear model
+
+--
+
+```{r comment=NA}
+
+# Copy the linear model output
+lm1 <- lm(age ~ circumference, data = Orange)
+
+```
+
+--
+
+In this example, *circumference* is the predictor variable (x) and *age* the response variable (y). Why?
+
+--
+
+- If you see a tree, which one is easy to measure, the circumference or age?
+
+
+--
+
+```{r comment=NA, eval=FALSE}
+
+# Display the linear model summary
+summary(lm1)
+
+```
+
+
+---
+
+```{r comment=NA, echo=FALSE}
+
+# Display the linear model summary
+summary(lm1)
+
+```
+
+
+--
+
+- Line equation, age = 16.6 + (7.81)circumference
+
+--
+
+- Coefficient of determination $(R^2)$ is 0.8345
+
+
+---
+
+### Interpretation of Results
+
+--
+
+Line equation:
+
+- Y-intercept = 16.6
+
+--
+
+- There is NO practical interpretation for the y-intercept 16.6.
+
+--
+
+- If there is not practical interpretation of the y-intercept, DO NOT mention it in your report.
+
+--
+
+- Slope = 7.81
+
+--
+
+- The orange trees get 7.81 days older ON AVERAGE for each millimeter increase in circumference.
+
+--
+
+Coefficient of determination $(R^2)$ = 0.8345
+
+--
+
+- The tree circumference can explain 83.45% of the variability of age. Therefore, it is strong predictor of the age of orange trees.
+
+---
+
+### Some Observations
+
+--
+
+- The linear regression analysis is not complete without the analysis of residuals.
+
+--
+
+- Therefore, the results previously reported are not conclusive. The analysis of residuals is a topic beyond the score of this course and data day.
+
+--
+
+- Comment in your report about the situations where these results can be helpful.
+
+---
+
+Using the data frame **chickwts** *(Run help(chickwts))*, determine the answer to the following question: 
+
+--
+
+- Do feed supplements  are effective on the growth of chickens? 
+
+--
+
+Step 1: Inspect the type of variables.
+
+--
+
+- What type of variables are *weight* and *feed*?
+
+--
+
+Step 2: Identify the appropriate type of analysis.
+
+--
+
+- Since *weight* and *feed* are quantitative and categorical respectively, use side-by-side boxplot, and summary of quantitative by categorical.
+
+--
+
+- Compare average of quantitative variable for each category.
+
+--
+
+- Identify unusual observations and similar spread across groups.
+
+
+---
+
+### Side-by-Side Box Plots
+
+```{r comment=NA, fig.align='center', fig.height=6}
+
+boxplot(weight ~ feed, data = chickwts)
+
+```
+
+---
+
+Add title, appropriate label and other visual elements
+
+--
+
+```{r comment=NA, fig.align='center', fig.height=6}
+
+boxplot(weight ~ feed, data = chickwts, xlab = "Type of Feed", 
+        ylab = "Weight (lb)", main = "Chicken Weights by Feed Type", 
+        col = "yellow")
+
+```
+
+
+---
+
+
+```{r comment=NA}
+# Summary by group type
+tapply(chickwts$weight, chickwts$feed, summary)
+
+
+```
+
+
+---
+
+Compare average (mean vs median)
+
+--
+
+- If no skewness is present, the mean and the median are about the same. Therefore compare means. Otherwise, compare medians.
+
+--
+
+- What group is greater (or smaller) on average?
+
+--
+
+- Why the averages are not the same? Were you expecting this pattern? 
+
+--
+
+Compare other characteristics:
+
+--
+
+- Is there any possible explanation for this similarity (or difference)
+
+--
+
+- What groups show evidence of unusual observations? Is there any possible explanation?
+
+
+---

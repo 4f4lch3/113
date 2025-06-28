@@ -1,0 +1,318 @@
+---
+title: "Introduction to Inferential Statistics"
+date: "March 24, 2025"
+output:
+  xaringan::moon_reader:
+    css: "myCSS.css"
+    chakra: "remark-latest.min.js"
+    self_contained: true
+    nature:
+      countIncrementalSlides: false
+---
+
+
+
+### Introduction 
+
+--
+
+In practice, statistical studies involve sampling several, perhaps many, individuals.
+
+--
+
+We often compute numerical summaries of samples, and the most commonly used summary are the sample mean and sample proportion.
+
+--
+
+If several samples are drawn from a population, they are likely to have different values for the sample mean (or proportion).
+
+--
+
+Because the value of the sample mean (or proportion) varies each time a sample is drawn, the sample mean (or proportion) is a **random variable**, and it has a probability distribution.
+
+--
+
+The probability distribution of the sample mean is called the *sampling distribution of $\bar{X}$*. Similarly, the sampling distribution of the sample proportion is called the *sampling distribution of $\hat{p}$.*
+
+---
+
+
+### The Sampling Distribution of the Sample Proportion, $\hat{p}$ 
+
+--
+
+When random samples are selected from a population, the following are properties of the sampling distribution of $\hat{p}$:
+
+--
+
+> $\mu_{\hat{p}}$ = p. The $\hat{p}$ is the sample proportion, **p** is the population proportion and $\mu_{\hat{p}}$ is the mean of the $\hat{p}$ sampling distribution.
+
+--
+
+> $\sigma_{\hat{p}}$ = $\sqrt{\frac{p(1 - p)}{n}}$. The sample size is **n** and $\sigma_{\hat{p}}$ is the standard deviation of the $\hat{p}$.
+
+--
+
+> When **n** is large and **p** is not near 0 or 1, the sampling distribution of $\hat{p}$ is approximately normal.
+
+--
+
+The farther the value of **p** is from 0.5 the larger **n** must be in order for the sampling distribution of $\hat{p}$ to be approximately normal.
+
+--
+
+A conservative rule of thumb is that if BOTH **np $\geq$ 10** and **n(1 - p) $\geq$ 10** then a normal distribution provides a reasonable approximation to the sampling distribution of $\hat{p}$
+
+
+---
+
+
+**Exercise:** According to a Harris poll, chocolate is the favorite ice cream flavor for 27% of Americans. If a sample of 100 Americans is taken, what is the probability that the sample proportion of those who prefer chocolate is greater than 0.30?
+
+--
+
+> Step 1: Compute the mean of $\hat{p}$:  $\mu_{\hat{p}}$ = p = 0.27
+
+--
+
+> Step 2: Compute the standard deviation of $\hat{p}$: $\sigma_{\hat{p}}$ = $\sqrt{\frac{p(1 - p}{n}}$ = $\sqrt{\frac{(0.27)(1 - 0.27)}{100}}$ = 0.0444
+
+--
+
+> Step 3: Compute the Z score for the observed $\hat{p}$: Z = $\frac{\hat{p} - \mu_{\hat{p}}}{\sigma_{\hat{p}}}$ = $\frac{0.30 - 0.25}{0.0444}$ = 0.68
+
+--
+
+> Step 4: Compute the probability using the Standard Normal Distribution:  P(Z > 0.68) = 1 - P(Z < 0.68) = 0.2483
+
+---
+
+**R GUI - simulation**
+
+--
+
+> Open R GUI: library(Rcmrd)
+
+--
+
+> Distributions > Discrete distributions > Binomial distribution > Sample from binomial distribution
+
+--
+
+> Enter name or data set: **icecream**
+
+--
+
+> Binomial trials: 1, Probability of success: 0.27, Number of samples (rows): 1000, Number of observations (columns): 100 > OK
+
+--
+
+Display summary of the sampled proportions and compared with the results according to the CTL.
+
+--
+
+> Statistics > Summaries > Numerical summaries
+
+--
+
+> Select variable: mean > OK
+
+---
+
+Display histogram of sampled proportions.
+
+--
+
+> Graphs > Histogram
+
+--
+
+> Variable: **mean** > OK
+
+--
+
+Find probability using simulation results.
+
+--
+
+> Data > Manage variables in active data set > Compute new variable
+
+--
+
+> New variable name: **pct30**
+
+--
+
+> Expression to compute: **mean > 0.3** > OK
+
+--
+
+> Statistics > Summaries > Frequency distributions
+
+--
+
+> Variables: **pct30** > OK
+
+
+---
+
+### The Central Limit Theorem 
+
+--
+
+Let $\bar{X}$ denote the sample mean of a random sample of size n from a population having mean $\mu$ and standard deviation $\sigma$.
+
+--
+
+The distribution of $\bar{X}$ has a mean denoted by $\mu_{\bar{x}}$ and the standard deviation by $\sigma_{\bar{x}}$. 
+
+--
+
+> Mean of $\bar{X}$ : $\mu_{\bar{x}}$ = $\mu$
+
+--
+
+> Standard deviation of $\bar{X}$: $\sigma_{\bar{x}}$ = $\frac{\sigma}{\sqrt{n}}$
+
+--
+
+> Distribution of $\bar{X}$: When the population Normal, the distribution of $\bar{X}$ is also NORMAL for ANY sample size n. Otherwise, the distribution is "approximately" NORMAL for a LARGE sample size, n $\geq$ 30.
+
+
+---
+
+**Exercise:** According to the records of a soft drink company, the bottles for their one-liter-sized products contain an average (mean) of 1.015 liters of beverage, with a standard deviation of 0.13 liters. As part of routine quality assurance, a sample of 50 bottles has been taken. The sample mean amount of beverage in these 50 bottles was 0.993 liters.
+
+Assuming the company's records are correct, find the probability of observing a sample mean of 0.993 liters or less in a sample of 50 bottles. Round your answer to at least three decimal places.
+
+--
+
+> Compute the Mean of $\bar{X}$:  $\mu_{\bar{x}}$ = $\mu$  = 1.015
+
+--
+
+> Compute the standard deviation of $\bar{X}$: 
+- $\sigma_{\bar{x}}$ = $\frac{\sigma}{\sqrt{n}}$ =  $\frac{0.13}{\sqrt{50}}$ = 0.0184
+
+--
+
+> Find the Z score of the observed sample mean: Z = $\frac{\bar{X} - \mu_{\bar{x}}}{\sigma_{\bar{x}}} =  \frac{0.993 - 1.015}{0.0184}$ = -1.196
+
+--
+
+> Compute the probability using the Z table: P(Z < -1.196) = 0.1158. In ALEKS, use the function P(Z < $_$)
+
+---
+
+**R GUI - simulation**
+
+--
+
+> Open R GUI: library(Rcmrd)
+
+--
+
+> Distributions > Continuous distributions > Normal distribution > Sample from normal distribution
+
+--
+
+> Enter name or data set: **bottles**
+
+--
+
+> Mean: 1.015, Standard deviation: 0.13, Number of samples (rows): 1000, Number of observations (columns): 50 > OK
+
+---
+
+Display summary of the sampled proportions and compared with the results according to the CTL.
+
+--
+
+> Statistics > Summaries > Numerical summaries
+
+> Select variable: mean > OK
+
+--
+
+Display histogram of sampled proportions.
+
+> Graphs > Histogram
+
+> Variable: **mean** > OK
+
+--
+
+Find probability using simulation results.
+
+--
+
+> Data > Manage variables in active data set > Compute new variable
+
+> New variable name: **less0993**
+
+> Expression to compute: **mean < 0.993** > OK
+
+> Statistics > Summaries > Frequency distributions
+
+> Variables: **less0993** > OK
+
+---
+
+### Effect of Sample Size on Sampling Distributions
+
+
+**Sampling Distribution of  $\hat{p}$ (when p = 0.01)**
+
+
+```{r comment=NA, echo=FALSE, fig.align='center', message=FALSE}
+
+library(tidyverse)
+
+phat1 <- replicate(10000, mean(sample(0:1,100,T,c(0.99,0.01))))
+phat2 <- replicate(10000, mean(sample(0:1,1000,T,c(0.99,0.01))))
+phat3 <- replicate(10000, mean(sample(0:1,10000,T,c(0.99,0.01))))
+phat4 <- replicate(10000, mean(sample(0:1,100000,T,c(0.99,0.01))))
+
+hist <- factor(rep(1:4, each=10000), labels = c("n = 100","n = 1,000","n = 10,000","n = 100,000"))
+
+hats <- c(phat1, phat2, phat3, phat4)
+
+df <- data.frame(hist, hats)
+
+ggplot(data=df, aes(x=hats) ) +
+  geom_histogram(bins = 50) +
+  geom_vline(xintercept = 0.01, col="red", lty=2) +
+  facet_wrap(vars(hist), nrow=2, scales = "free") +
+  labs(x = NULL, y = NULL)
+
+
+```
+
+---
+
+**Sampling Distribution of $\bar{X}$ (when $\mu$ = 5)**
+
+```{r comment=NA, echo=FALSE, fig.align='center'}
+
+xbar1 <- replicate(1000, mean(rexp(5, 0.2)))
+xbar2 <- replicate(1000, mean(rexp(15, 0.2)))
+xbar3 <- replicate(1000, mean(rexp(30, 0.2)))
+xbar4 <- replicate(1000, mean(rexp(100, 0.2)))
+
+hist <- factor(rep(1:4, each=1000), labels = c("n = 5","n = 15","n = 30","n = 100"))
+
+xbars <- c(xbar1, xbar2, xbar3, xbar4)
+
+df <- data.frame(hist, xbars)
+
+ggplot(data=df, aes(x=xbars) ) +
+  geom_histogram(bins = 50) +
+  geom_vline(xintercept = 5, col="red", lty=2) +
+  facet_wrap(vars(hist), nrow=2) +
+  labs(x = NULL, y = NULL)
+
+
+```
+
+
+

@@ -1,0 +1,323 @@
+---
+title: "The Least-Squares Regression Line"
+date: "February 24, 2025"
+output:
+  xaringan::moon_reader:
+    css: "myCSS.css"
+    chakra: "remark-latest.min.js"
+    self_contained: true
+    nature:
+      countIncrementalSlides: false
+---
+
+
+### The Least-Squares Regression
+
+
+--
+
+Scatterplot with fitted line, $\hat{Y}$ = $b_o + b_1X$
+
+```{r comment=NA, echo=FALSE, message=FALSE, fig.align='center', fig.height=3.5}
+
+library(tidyverse)
+ggplot(mtcars, aes(x=wt, y=mpg)) +
+  geom_point(cex=2) + geom_smooth(method = "lm", se=F) +
+  theme(
+    axis.text = element_blank(),
+    axis.title = element_blank()
+  ) +
+  lims(x=c(0,6), y=c(8,38))
+
+
+```
+
+---
+
+
+Scatterplot with linear model, Y = $b_o + b_1X$ + *residual*
+
+```{r comment=NA, echo=FALSE, message=FALSE, fig.align='center', fig.height=3.5}
+
+yhat <- as.numeric(lm(mpg~wt,data=mtcars)$fitted)
+
+ggplot(mtcars, aes(x=wt, y=mpg)) +
+  geom_point(cex=2) + geom_smooth(method = "lm", se=F) +
+  geom_segment(aes(xend=wt, yend=yhat), col="red") + 
+  theme(
+    axis.text = element_blank(),
+    axis.title = element_blank()
+  ) +
+  lims(x=c(0,6), y=c(8,38))
+
+
+```
+
+--
+
+- The Least-Squares method finds $b_o$ and $b_1$ such that the sum of square residuals *(distance from points to the line)* is the minimum. 
+
+--
+
+- $b_o$ is the Y-intercept, and $b_1$ is the slope.
+
+
+---
+
+
+**Formulas**
+
+
+The **slope** of the line: $b_1$ = $r\frac{S_y}{S_x}$
+
+- The coefficient of correlation is, **r**. $S_y$ and $S_x$ are the standard deviations of Y and X respectively. The $b_1$ represents the amount Y increases (or decreases) on AVERAGE for every unit increase in X 
+
+--
+
+The **y-intercept** of the line: bo = $\bar{Y} - b\bar{X}$
+
+- The $b_o$ represents the value of Y when X = 0 
+
+--
+
+The residual *(error or deviation)* of any observation is given by: Y - $\hat{Y}$
+
+- The residual measures the amount missed by $\hat{Y}$ in the prediction of Y
+
+
+
+---
+
+### The Least-Squares Regression in R
+
+--
+
+- STATISTICS > FIT MODELS > LINEAR REGRESSION > Pick response (Y) and explanatory (X) variables > OK
+
+--
+
+```{r comment=NA, echo=FALSE}
+
+lm1 <- lm(mpg ~ wt, data = mtcars)
+
+summary(lm1)
+
+```
+
+
+---
+
+**Interpretation**
+
+
+Y-intercept = 37.285
+
+--
+
+- At *zero* pounds, the average fuel efficiency of cars is 37.285 mpg. In this context, the Y-intercept does not have any practical interpretation.
+
+
+Slope = -5.344
+
+--
+
+- For every 1000 lbs, the fuel efficiency of a car decreases by 5.344 mpg on average.
+
+
+---
+
+*Exercise:* Determine the residual of fuel efficiency (mpg) of a Honda Civic with 30.4 mpg and actual weight of 1.615 (1000 lbs). 
+
+--
+
+- Residual = Observed - Predicted = Y - $\hat{Y}$
+
+--
+
+- First, compute the predicted (or fitted) value $\hat{Y}$ 
+
+--
+
+- $\hat{Y}$ = 37.285 - 5.344(1.615) = 28.654
+
+--
+
+- Calculate the residual: Y - $\hat{Y}$ 
+
+--
+
+- Y - $\hat{Y}$ = 30.4 - 28.654 = 1.746
+
+--
+
+Is the fuel efficiency above or below the average? 
+
+--
+
+- The fuel efficiency of the Honda Civic is 1.746 mpg above the average.
+
+
+---
+
+**Adding the fitted line to the scatterplot.** 
+
+--
+
+- GRAPHS > SCATTERPLOT > Pick x-variable and y-variable > OPTIONS > Least-Squares line > OK
+
+--
+
+```{r comment=NA, echo=F,  fig.align='center', fig.height=6}
+
+plot(mpg ~ wt, data = mtcars, xlab="Weight (1,000 lbs)", ylab="mpg", pch=19)
+abline(37.285, -5.344, col = "blue")
+
+```
+
+---
+
+
+### Coefficient of Determination
+
+--
+
+- The coefficient of determination, $r^2$ can be thought as the **proportion of the total variation** in Y that can be attributed to the least-squares regression line.
+
+--
+
+- The square of the correlation coefficient *r* computes the coefficient of determination; although, they have different interpretation.
+
+--
+
+- The coefficient of determination is a number between 0 and 1.
+
+--
+
+- If $r^2$ = 0, the regression line has NO explanatory value.
+
+---
+
+Compute and interpret the coefficient of determination in the linear model between Hormone replacement therapy (HRT) and the risk of breast cancer.
+
+% HRT Use | 46.30 | 40.60 | 39.50 | 36.60 | 30.00
+:----|:----|:----|:----|:----|:----
+Incidence | 103.30 | 105.00 | 100.00 | 93.80 | 83.50
+
+--
+
+**Insert Data in R**
+
+> Open R GUI: library(Rcmdr)
+
+> Click on Data > New data set > Enter name for data set: **HRT** > OK
+
+> Click "Add row" five times because there are 5 observations, then click "Add column" once because we have one additional variable.
+
+> Change the columns names from V1 and V2 to **hrtpct** and **risk** respectively.
+
+> STATISTICS > SUMMARIES > CORRELATION MATRIX
+
+
+---
+
+```{r comment=NA, echo=F}
+
+# Copy the explanatory variable
+hrt <- c(46.30,40.60,39.50,36.60,30.00)
+
+# Copy the response variable
+rate <- c(103.30,105.00,100.00,93.80,83.50)
+
+cor(hrt, rate)
+
+```
+
+```{r comment=NA}
+
+# Coefficient of Determination 
+(0.9112)^2
+
+```
+
+--
+
+- The linear model can explain 83% of the variability of risk of breast cancer. 
+
+
+---
+
+**Exercise:** The table below contains data on microwave ovens found at www.target.com. *(Use the instructions given in the previous exercise to enter these data in R GUI)*
+
+
+```{r comment=NA, echo=FALSE}
+
+price <- c(80,80,50,90,100,90,110,90,75,80,63)
+watts <- c(1100,700,700,1200,1200,1200,1200,1000,1000,1000,700)
+cbind(price, watts)
+
+```
+
+
+---
+
+
+*a)* Obtain a scatterplot using Price as the X variable and Watts as the Y variable.
+
+
+```{r comment=NA, echo=FALSE}
+
+# Create a numeric object with price data
+price <- c(80,80,50,90,100,90,110,90,75,80,63)
+
+# Create a numeric object with watts data
+watts <- c(1100,700,700,1200,1200,1200,1200,1000,1000,1000,700)
+
+
+```
+
+
+```{r comment=NA, echo=F, fig.align='center', fig.height=6}
+
+# Display the scatterplot
+plot(watts ~ price)
+
+```
+
+
+---
+
+*b)* Describe the scatterplot in (a).
+
+--
+
+- There relationship appears to be positive and somewhat linear, with several unusual points.
+
+--
+
+*c)* Compute the correlation.
+
+--
+
+```{r comment=NA, echo=F}
+
+cor(price, watts)
+
+```
+
+
+- You get the same result if you change the order of the objects
+
+--
+
+*d)* What does the value of r indicate about the relationship between Price and Watts?
+
+--
+
+- There is a strong, positive linear relationship between Price and Watts. As the price of microwaves increases, the number of watts tend to increase.
+
+
+---
+
+
+
+

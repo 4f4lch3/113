@@ -1,0 +1,158 @@
+---
+title: "Summary of Categorical and Quantitative Data"
+date: "February 3, 2025"
+output:
+  xaringan::moon_reader:
+    css: "myCSS.css"
+    chakra: "remark-latest.min.js"
+    self_contained: true
+    nature:
+      countIncrementalSlides: false
+---
+
+## Basic Concepts
+
+A **variable** is any characteristic whose value may change from one individual or object to another. A variable can be any of two types:
+
+--
+
+- **Categorical (Qualitative)**: They represent categories or groups. For example, gender, color, or country.
+
+--
+
+- **Numeric (Quantitative)**: They measure how much or how many of something there is. Typically, they have units. For example, height, weight, or temperature.
+
+--
+
+Quantitative variables can be **discrete** or **continuous**. Numeric discrete are countable or exist for specific values. For example, phone calls, absent students, or broken computers. On the other hand, continuous are uncountable and they are best represented with intervals. For example, price, earning or speed.
+
+
+---
+
+**Categorical Data: Numeric Summary** 
+
+--
+
+Categorical data are summarized with a **frequency table**.
+
+--
+
+For example, consider the frequency table of the variable **feed** in the data frame **chickwts**.
+
+--
+
+- Step 1: Open R
+
+--
+
+- Step 2: In R Console, type **library(Rcmdr)** and hit ENTER. This action will bring the graphical user interface (GUI) for data analysis.
+
+
+- Step 3: Click on DATA > DATA IN PACKAGES > Read data set from an attached package ...
+
+--
+
+- Step 4: Enter name of data set: **chickwts**
+
+--
+
+- Step 5: Click on STATISTICS > SUMMARIES > FREQUENCIES DISTRIBUTIONS
+
+--
+
+- Step 6: Select the variable **feed**, and click OK.
+
+---
+
+Frequency Table *(Counts)*
+
+
+```{r comment=NA, echo=-1}
+table(chickwts$feed)
+
+```
+
+Percentages:
+
+```{r comment=NA, echo=-2}
+
+round(table(chickwts$feed)*100/71,2)
+
+```
+---
+
+In the frequency table (counts), you can identify all categories in your data and count how many of them are available. With this information, you can tell which group is the least common, the most common, find the total and make comparison among them.
+
+--
+
+If you divide the frequency table by the total, you get the **relative frequency** (proportion) table. The relative frequency is the comparison of the frequency "relative" to the total. The best way to interpret (or explain) proportions in layman terms is with **percentages**. The percent is the proportion times 100. For example, we can say that 14.1% of chicken are feed with horsebean.
+
+--
+
+The percent in the relative frequency table refers to this specific data (or sample). However, if your data is a good representation of a large population, then you can make inference to that particular population by estimating that about 14% of chicken are fed with horsebean.
+
+
+---
+
+**Categorical Data: Graphical Summary**
+
+--
+
+A **Bar Graph** (or bar chart, bar plot) is the graphical representation of frequency (count) tables. Therefore, use this chart for categorical data.
+
+--
+
+**Bar Graph Characteristics**
+
+- Each bar represents a category with height equal to its frequency *(or relative frequency)*.
+
+
+- All bars must have the same width and color. 
+
+
+- The bar plot must include a title, and axes with appropriate labels. 
+
+--
+
+**Bar Graphs in R**
+
+- Step 1: Click on GRAPHS > BAR GRAPH
+
+- Step 2: Select the variable **feed**, and click OK.
+
+---
+
+```{r comment=NA, fig.align='center', fig.width=7, echo=F}
+
+barplot(table(chickwts$feed))
+
+```
+
+
+---
+
+You can specify title, axes labels and color to the bar chart. In step 2, before clicking OK, do the following:
+
+- Step 3: Click on the **OPTIONS** tab.
+
+- Step 4: Specify PLOT LABELS
+
+- Step 5 (Optional): If you want red bars, add to the corresponding script **col="red", ** before xlab. Select the line and hit SUBMIT.
+
+
+---
+
+```{r comment=NA, fig.align='center', fig.width=7, echo=F}
+
+barplot(table(chickwts$feed), 
+        main="Frequency Distribution of Feed Type", 
+        xlab="Feed Supplement", ylab="Frequency", col="red")
+
+```
+
+
+---
+
+
+
+

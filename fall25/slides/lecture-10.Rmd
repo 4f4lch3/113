@@ -1,0 +1,507 @@
+---
+title: "Review for Exam 2"
+date: "March 10, 2025"
+output:
+  xaringan::moon_reader:
+    css: "myCSS.css"
+    chakra: "remark-latest.min.js"
+    self_contained: true
+    nature:
+      countIncrementalSlides: false
+---
+
+
+An independent mail delivery service wants to study factors that affect the daily gas usage of its delivery trucks. Using data collected from different trucks on various days, a company analyst uses software to fit a regression model of the following form. 
+
+- $\hat{y} = 107.8 + 6.9x_1 - 4.3x_2 + x_3 + 0.02x_4$
+
+
+In this model are the following variables.
+
+- y = Volume of gasoline used (in gallons)
+
+- $x_1$ = Weight of truck (in tons)
+
+- $x_2$ = Tire pressure (in psi, pounds per square inch)
+
+- $x_3$ = Weight of initial package load (in hundreds of pounds)
+
+- $x_4$ = Total distance driven while delivering packages (in miles)
+
+Answer the questions below for the interpretation of the coefficient of $x_4$ in this model. 
+
+
+---
+
+(a) Holding the other variables fixed, what is the average change in daily fuel used for each additional mile that a truck is driven?
+
+--
+
+- $\hat{y} = 107.8 + 6.9x_1 - 4.3x_2 + x_3 + 0.02x_4$
+
+- $x_4$ = Total distance driven while delivering packages (in miles)
+
+--
+
+- The question refers to the slope when $x_4$ is the only variable.
+
+--
+
+- The average change is 0.02 gallons
+
+--
+
+(b) Is this change an increase or a decrease?
+
+--
+
+- The sign of the slope is *positive* when $x_4$ is the only variable.
+
+--
+
+- Therefore the change is going to *increase*
+
+
+---
+
+
+### The Empirical Rule (68-95-99.7%)
+
+--
+
+If a distribution is "roughly" bell shaped, then: 
+
+--
+
+Std. Dev WITHIN $\mu$ | Central area | Left tail area | Right Tail area
+----|----|----|----
+1 | 68% | 16% | 16%
+2 | 95% | 2.5% | 2.5%
+3 | 99.7% | 0.15% | 0.15%
+
+
+--
+
+- The empirical rule deals **ONLY** with areas 1, 2, or 3 standard deviations within the mean. For standard deviations beyond 3, the area within is approximately ONE.
+
+
+
+
+---
+
+Students at a major university are complaining of a serious housing crunch. They complain that many students have to commute too far to school because there is not enough housing near campus. University officials respond with the following information: the mean distance commuted to school by students is 15.8 miles, and the standard deviation of the distance commuted is 3.9 miles.
+
+Assuming that the university officials' information is correct, complete the following statements about the distribution of commute distances for students at this university. 
+
+--
+
+(a) According to Chebyshev's theorem, at least $\frac{8}{9}$ (about 89%) of the commute distances lie between ______ miles and ______ miles (Round your answer to 1 decimal place.)
+
+--
+
+- *(Textbook, page 40)* In any data set, the proportion of the data that will be within K standard deviations of the mean is **at least** $1 - \frac{1}{K^2}$. Specifically, by setting K = 2 and K = 3, we obtain the following results:
+
+--
+
+- **At least** 3/4 (75%) of the data will be **within** TWO standard deviations of the mean.
+
+--
+
+- **At least** 8/9 (88.9%) of the data will be **within** THREE standard deviations of the mean.
+
+
+---
+
+(a) According to Chebyshev's theorem, at least $\frac{8}{9}$ (about 89%) of the commute distances lie between ______ miles and ______ miles (Round your answer to 1 decimal place.)
+
+- **At least** 8/9 (88.9%) of the data will be **within** THREE standard deviations of the mean. 
+
+--
+
+- In this exercise, the mean is 15.8 and standard deviation is 3.9
+
+--
+
+- Lower limit is 15.8 - (3)(3.9) = 4.1 and Upper limit is 15.8 + (3)(3.9) = 27.5
+
+--
+
+(b) According to Chebyshev's theorem, at least __________ of the commute distances lie between 8.0 miles and 23.6 miles.
+
+--
+
+- Compute the number of standard deviations 8.0 and 23.6 are to the mean by using the Z score formula: $Z = \frac{x - \mu}{\sigma}$.
+
+--
+
+- The number 8.0 is at -2 (or two standard deviations below the mean) and 23.6 is 2.
+
+--
+
+- Since 8.0 and 23.6 are within TWO standard deviation to the mean, there is **at least** 75% of commutes.
+
+---
+
+
+Suppose that the speeds of cars travelling on California freeways are normally distributed with a mean of 55 miles/hour. The highway patrol's policy is to issue tickets for cars with speeds exceeding 75 miles/hour. The records show that exactly of the speeds exceed this limit. Find the standard deviation of the speeds of cars travelling on California freeways. Carry your intermediate computations to at least four decimal places. Round your answer to at least one decimal place.
+
+--
+
+- Distribution is Normal with mean, $\mu$, of 55.
+
+--
+
+- It is known that P(X > 75) = 0.05
+
+--
+
+- In the solution, consider the Z-score formula, Z = $\frac{X - \mu}{\sigma}$.
+
+--
+
+- Z is the variable associated with the Standard Normal Distribution.
+
+--
+
+- The Z value associated with the top 5% is 1.6448. *(In ALEKS, use the function $Z_{0.05}$)*
+
+--
+
+- $\frac{75 - 55}{\sigma}$ = 1.6448.  Solve for $\sigma$, the standard deviation.
+
+--
+
+- $\sigma$ = $\frac{75 - 55}{1.6448}$ = 12.16
+
+---
+
+YodelAir operates a charter jet service out of an airport in a secluded mountain ski resort. The chief safety officer for YodelAir uses a normal distribution with a mean of 629 m and a standard deviation of 120 m to model the takeoff distance of the company's X15 jets in wintry weather. Find the percentage of takeoff distances between 467 m and 611 m according to the model. For your intermediate computations, use four or more decimal places. Give your final answer to two decimal places (for example 98.23%).
+
+--
+
+- Distribution is Normal with $\mu$ = 629 and $\sigma$ = 120.
+
+--
+
+- Find P(467 < X < 611)
+
+--
+
+- Use the Z score formula to find the corresponding values for 467 and 611.
+
+--
+
+- $Z_1 = \frac{467 - 629}{120}$ = -1.35, and $Z_2 = \frac{611 - 629}{120}$ = -0.15
+
+--
+
+- P(467 < X < 611) = P(-1.35 < Z < -0.15) = P(Z < -0.15) - P(Z < -1.35)
+
+--
+
+- In ALEKS calculator, use the function **P(Z $\leq$ _)**.
+
+--
+
+- P(467 < X < 611) = 0.3519 $\approx$ 35.19%
+
+
+---
+
+Risk taking is an important part of investing. In order to make suitable investment decisions on behalf of their customers, portfolio managers give a questionnaire to new customers to measure their desire to take financial risks. The scores on the questionnaire are approximately normally distributed with a mean of 50.5 and a standard deviation of 15. The customers with scores in the bottom 5% are described as "risk averse." What is the questionnaire score that separates customers who are considered risk averse from those who are not? Round your answer to one decimal place. 
+
+--
+
+- Distribution is Normal with $\mu$ = 50.5 and $\sigma$ = 15.
+
+--
+
+- Using the ALEKS calculator, use the function $Z_$. 
+
+--
+
+- **Warning:** The function $Z_{0.05}$ returns the Z value corresponding to the **TOP** 5%. The **BOTTOM** 5% is given by the **negative** value.
+
+--
+
+- $-Z_{0.05}$ = -1.6449.
+
+--
+
+- Solve for X the following equation: $\frac{X - 50.5}{15} = -1.6449$
+
+--
+
+- X = 25.8
+
+---
+
+Suppose that X, Y and Z are jointly distributed random variables, that is, they are defined on the same sample space. Suppose that we also have the following.
+
+- E(X) = 1, E(Y) = 4, E(Z) = -3
+
+- Var(X) = 5, Var(Y) = 24, Var(Z) = 4
+
+Compute the values of the expressions below.
+
+--
+
+- Consider the following rules:
+
+- E(a + bX) = a + bE(X)
+
+- Var(a + bX) = $b^2$Var(X)
+
+--
+
+E(-1 - 5Y)
+
+--
+
+- -1 - 5E(Y)
+
+--
+
+- -1 - 5(4) = -21
+
+---
+
+$E(\frac{-2X - 4Y}{-5})$
+
+--
+
+- $E(\frac{-2X}{-5} + \frac{-4Y}{-5})$
+
+--
+
+- $E(\frac{2}{5}X + \frac{4}{5}Y)$
+
+--
+
+- $\frac{2}{5}E(X) + \frac{4}{5}E(Y)$
+
+--
+
+- $\frac{2}{5}(1) + \frac{4}{5}(4)$
+
+--
+
+- $\frac{2}{5} + \frac{16}{5}$
+
+--
+
+- $\frac{18}{5}$
+
+---
+
+Var(-2Z + 4)
+
+--
+
+- $(-2)^2$Var(Z)
+
+--
+
+- 4Var(Z) = 4(4) = 16
+
+--
+
+$E(2Y^2)$
+
+--
+
+- $2E(Y^2)$
+
+--
+
+- By definition: Var(Y) = $E(Y^2) - E^2(Y)$
+
+--
+
+- $E(Y^2) = Var(Y) + E^2(Y)$
+
+--
+
+- $2(Var(Y) + E^2(Y))$
+
+--
+
+- $2(24 + (4)^2)$
+
+--
+
+- 80
+
+---
+
+Dr. Powell is a veterinarian who sees only dogs and cats. In each appointment, he may or may not give the animal a vaccine. The two-way frequency table summarizes Dr. Powell's 50 appointments last week.
+
+Pet | Vaccine | No Vaccine
+----|----|----
+Dog | 14 | 6
+Cat | 11 | 19
+
+Let **dog** be the event that a randomly chosen appointment (from the table) involved a dog. Let **vaccine** be the event that a randomly chosen appointment (from the table) included a vaccine.
+
+Find the following probabilities. Write your answers as decimals. 
+
+--
+
+P(dog)
+
+---
+
+Pet | Vaccine | No Vaccine | Total
+----|----|----|----
+Dog | 14 | 6 | 20
+Cat | 11 | 19 | 30
+Total | 25 | 25 | 50
+
+--
+
+- P(dog) = $\frac{20}{50}$ = 0.4
+
+--
+
+P(vaccine and dog)
+
+--
+
+- P(vaccine and dog) = $\frac{14}{50}$ = 0.28
+
+--
+
+P(vaccine | dog)
+
+--
+
+- P(vaccine | dog) is the probability that the chosen appointment included a vaccine **GIVEN THAT** the selected pet is a dog. 
+
+--
+
+- P(vaccine | dog) = $\frac{14}{20}$ = 0.7
+
+---
+
+
+A golf instructor examined student data. He found that when a student takes longer to hit, it implies that the ball will land closer to the hole. What can he conclude?
+
+- There is no correlation between amount of time before hitting and distance from the hole.
+
+- There is a correlation between amount of time before hitting and distance from the hole. There may or may not be causation. Further studies would have to be done to determine this.
+
+- There is a correlation between amount of time before hitting and distance from the hole. There is probably also causation. This is because there is a decrease in the distance from the hole with an increase in the amount of time before hitting.
+
+
+---
+
+A golf instructor examined student data. He found that when a student takes longer to hit, it implies that the ball will land closer to the hole. What can he conclude?
+
+- There is no correlation between amount of time before hitting and distance from the hole.
+
+- **There is a correlation between amount of time before hitting and distance from the hole. There may or may not be causation. Further studies would have to be done to determine this.**
+
+- There is a correlation between amount of time before hitting and distance from the hole. There is probably also causation. This is because there is a decrease in the distance from the hole with an increase in the amount of time before hitting.
+
+--
+
+**Warning about correlation:** We cannot infer causal relationship on the basis of high sample correlation. High correlation DOES NOT imply causality; unless, your data is "experimental." When a high correlation is observed in the sample data, the only safe conclusion is that the linear trend may exist between x and y. Remember that correlation measures the extent of linear association, but association does not imply causation.
+
+---
+
+A city conducted a traffic study. It reported that having more signals does not indicate a shorter or longer commute time for drivers. What can be determined?
+
+- There is no correlation between number of signals and commute time.
+
+- There is a correlation between number of signals and commute time. However, there is no causation. This is because there is probably an increase in the commute time with an increase in the number of signals.
+
+- There is a correlation between number of signals and commute time. There may or may not be causation. Further studies would have to be done to determine this.
+
+
+---
+
+A city conducted a traffic study. It reported that having more signals does not indicate a shorter or longer commute time for drivers. What can be determined?
+
+- **There is no correlation between number of signals and commute time.**
+
+- There is a correlation between number of signals and commute time. However, there is no causation. This is because there is probably an increase in the commute time with an increase in the number of signals.
+
+- There is a correlation between number of signals and commute time. There may or may not be causation. Further studies would have to be done to determine this.
+
+---
+
+Employees at a large office building took a survey. The results show that those who began work earlier tended to drink less tea. Which statement is most likely true?
+
+- There is no correlation between start time and amount of tea consumed.
+
+- There is a correlation between start time and amount of tea consumed. There may or may not be causation. Further studies would have to be done to determine this.
+
+- There is a correlation between start time and amount of tea consumed. However, there is no causation. This is because there is a decrease in the amount of tea consumed with an earlier start time.
+
+
+---
+
+
+Employees at a large office building took a survey. The results show that those who began work earlier tended to drink less tea. Which statement is most likely true?
+
+- There is no correlation between start time and amount of tea consumed.
+
+- **There is a correlation between start time and amount of tea consumed. There may or may not be causation. Further studies would have to be done to determine this.**
+
+- There is a correlation between start time and amount of tea consumed. However, there is no causation. This is because there is a decrease in the amount of tea consumed with an earlier start time.
+
+---
+
+A history instructor has given the same pretest and the same final examination each semester. He is interested in determining if there is a relationship between the scores of the two tests. He computes the linear correlation coefficient and notes that it is 1.15. What does this correlation coefficient value tell the instructor?
+
+
+A) There is a strong positive correlation between the tests.
+
+B) There is a strong negative correlation between the tests.
+
+C) The correlation is something other than linear.
+
+D) The history instructor has made a computational error.
+
+
+---
+
+A history instructor has given the same pretest and the same final examination each semester. He is interested in determining if there is a relationship between the scores of the two tests. He computes the linear correlation coefficient and notes that it is 1.15. What does this correlation coefficient value tell the instructor?
+
+
+A) There is a strong positive correlation between the tests.
+
+B) There is a strong negative correlation between the tests.
+
+C) The correlation is something other than linear.
+
+**D) The history instructor has made a computational error.**
+
+
+---
+
+A traffic officer is compiling information about the relationship between the hour or the day and the speed over the limit at which the motorist is ticketed. He computes a correlation coefficient of 0.12. What does this tell the officer?
+
+
+A) There is a weak positive linear correlation.
+
+B) There is a moderate positive linear correlation.
+
+C) There is a moderate negative linear correlation.
+
+D) There is insufficient evidence to make any conclusions about the relationship between the variables.
+
+---
+
+A traffic officer is compiling information about the relationship between the hour or the day and the speed over the limit at which the motorist is ticketed. He computes a correlation coefficient of 0.12. What does this tell the officer?
+
+
+**A) There is a weak positive linear correlation.**
+
+B) There is a moderate positive linear correlation.
+
+C) There is a moderate negative linear correlation.
+
+D) There is insufficient evidence to make any conclusions about the relationship between the variables.
+
+---

@@ -1,0 +1,236 @@
+---
+title: "Introduction to Data Day 4"
+date: "May 8, 2025"
+output:
+  xaringan::moon_reader:
+    css: "myCSS.css"
+    self_contained: true
+    chakra: "remark-latest.min.js"
+    nature:
+      countIncrementalSlides: false
+---
+
+
+**Prepare your MS Word document**
+
+--
+
+- Open a new **Word** document.
+
+
+- Click on the INSERT > Header > Three Column Header
+
+
+- On each column type: *your name*, *Section 1*, and your instructor name, *A. Falchettore*. 
+
+
+- Save your Word document (FILE > SAVE AS) with the following format: your last name, your first initial, your student ID number, and the letters DD4. 
+
+
+- So, if you are Sue Jones ID 99999999, your document would be saved as **joness99999999DD4**
+
+--
+
+Access Brightspace and read the project instructions **BEFORE** downloading the data file for analysis
+
+
+---
+
+**Before you begin, inspect the type of variables.**
+
+--
+
+> Open R Gui: library(Rcmdr)
+
+> Data > Data in packages > Read data set from an attached package > Enter name of data set: **Orange** > OK
+
+
+---
+
+## Two Quantitative Variables
+
+--
+
+**Assignment:** Using the data frame **Orange**, Is trunk circumference related to the age of the tree? That is, do trees with large (or short) circumferences are much older? 
+
+--
+
+**Step 1: Make a Scatterplot**
+
+--
+
+> Graph > Scatterplot
+
+> x-variable: **circumference**; y-variable: **age**
+
+
+---
+
+```{r comment=NA, fig.align='center', fig.height=6, echo=F}
+
+plot(age ~ circumference, data = Orange, pch=19, xlab="Circunference (mm)", ylab="Age (Days)", main = "Grow of Orange Trees", col="blue")
+
+```
+
+
+Use OPTIONS to add plot labels.
+
+
+---
+
+**Step 2: Compute the Correlation Coefficient**
+
+--
+
+> Statistics > Summaries > Correlation matrix
+
+> Press the **Ctrl** key and select the variables **age** and **circumference** > OK
+
+--
+
+Use this result with the scatterplot to explain your findings in layman terms. 
+
+--
+
+```{r comment=NA, echo=F}
+
+cor(Orange$age, Orange$circumference)
+
+```
+
+---
+
+**Step 3: Fit a Simple Linear Regression Model**
+
+--
+
+> Statistics > Fit Models > Linear regression
+
+> Response variable: **age**; Explanatory variable: **circumference** > OK
+
+---
+
+```{r comment=NA, echo=F}
+
+summary(lm(age ~ circumference, Orange))
+
+```
+
+--
+
+Include in your report the interpretation of the y-intercept and slope, make prediction and assess the linear fit with the R-squared.
+
+
+
+---
+
+
+### One Quantitative with One Categorical variable
+
+--
+
+**Assignment:** Using the data frame **Orange**, determine the answer to the following question: Do trees in this orchard have different circumference diameters? 
+
+
+--
+
+**Step 1: Make a Side-by-Side Box Plot**
+
+--
+
+> Graphs > Boxplot
+
+> Variable: **circumference**
+
+> Plot by > Groups variable: **Tree** > OK > OK
+
+
+---
+
+
+```{r comment=NA, echo=F, fig.align='center', , fig.height=7, fig.width=10}
+
+boxplot(circumference ~ Tree, data = Orange, xlab = "Tree ID", ylab = "Tree Circumference (mm)", main = "Orange Trees by Circumference Length", col = "yellow")
+
+```
+
+
+Use OPTIONS to add title, appropriate label and other visual elements
+
+
+---
+
+**Step 2: Compute summary of quantitative by each category in qualitative variable**
+
+--
+
+> Statistics > Summaries > Numerical summaries
+
+> Variables: **circumference**
+
+> Summarize by groups > Groups variable: **Tree** > OK > OK
+
+
+---
+
+
+```{r comment=NA, echo=F}
+# Summary by group type
+tapply(Orange$circumference, Orange$Tree, summary)
+
+
+```
+
+--
+
+In general compare medians. If no skewness is present, the mean and the median are about the same. What group is greater (or smaller) on average? Why the averages are not the same? Were you expecting this pattern? Is there any possible explanation for this similarity (or difference) What groups show evidence of unusual observations? Is there any possible explanation?
+
+
+---
+
+**Step 3: Make a Back-to-Back Stemplot**
+
+--
+
+Back-to-Back stemplot compares the distribution of a quantitative variable between two groups in a categorical variable. For example, compare tree id 3 and 4.
+
+--
+
+> Data > Active data set > Subset active data set
+
+> Subset expression: **Tree=="3" | Tree=="4"** > OK > Yes
+
+> Graphs > Stem-and-leaf display > Variable: **circumference**
+
+> Plot back-to-back by > Groups variable: **Tree** > OK
+
+> Options > Parts Per Stem: **1** > OK
+
+
+---
+
+```{r comment=NA, echo=F, warning=F}
+
+library(aplpack)
+
+tree_3 <- Orange$circumference[Orange$Tree=="3"]
+tree_4 <- Orange$circumference[Orange$Tree=="4"]
+
+stem.leaf.backback( tree_3, tree_4 , m=1)
+
+```
+
+
+Compare the shape and mode of both distributions.
+
+---
+
+
+
+
+
+
+
+
+
+
