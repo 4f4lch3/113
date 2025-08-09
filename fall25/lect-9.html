@@ -355,8 +355,8 @@ display: none;
 
 <div id="index">
 <p><span style="padding-left:30px;">
-<a href="index.html" style="color:#60269E;"> BACK TO MAIN MENU </a>
-</span></p>
+<a href="syllabus-f25.html#t11" style="color:#60269E;"> BACK TO
+SCHEDULE </a> </span></p>
 <ul>
 <li><p><a href="#d9-1"> The Stem Plot </a></p></li>
 <li><p><a href="#d9-2"> The Back-to-Back Stem Plot </a></p></li>
@@ -370,19 +370,19 @@ display: none;
 <h1>
 The Stem Plot
 </h1>
-<p>Stem plots or Stem-and-Leaf plots are a simple way to display small
-data sets of quantitative type.</p>
+<p>Stem-and-Leaf plots are simple ways to display small data sets of
+quantitative type.</p>
 <p>In a stem-and-leaf plot, the rightmost digit is the leaf, and the
-remaining digits from the stem. For example, if a data value is 14, then
-1 is the stem and 4 the leaf.</p>
+remaining digits on the left are the stem. For example, if a data value
+is 14, then 1 is the stem and 4 the leaf.</p>
 <hr />
-<p>Open the data frame <strong>mtcars</strong> and display the
+<p>For example, in the data frame <strong>mtcars</strong>, display the
 stem-and-leaf plot for the variable <strong>mpg</strong></p>
 <blockquote>
-<p>Graphs &gt; Stem-and-leaf display &gt; Select variable: mpg</p>
+<p>GRAPH &gt; STEM-AND-LEAF DISPLAY &gt; Select variable: mpg</p>
 </blockquote>
 <blockquote>
-<p>Select the <strong>Options</strong> tab and choose Parts Per Stem:
+<p>Click on the <strong>Options</strong> tab and choose Parts Per Stem:
 1</p>
 </blockquote>
 <blockquote>
@@ -420,15 +420,16 @@ OK</p>
 <hr />
 <p><strong>Some Observations:</strong></p>
 <ul>
-<li><p>The first stem and leaf, 10|44, indicates two data values: 10.4
-and 10.4. The minimum is 10.4. It is a coincidence that two cars have
-the same mpg. Similarly, the last stem, 33|9, represents the maximum
-data value 33.9.</p></li>
-<li><p>Similar to the histogram, the stem-and-leaf plot displays the
-distribution of a quantitative data, with the difference that you can
-visualize now each data value and identify the minimum and
-maximum.</p></li>
-<li><p>In this version of stem-and-leaf plot, you can identify the
+<li><p>The top row in the stem and leaf plot, 10|44, indicates two data
+values: 10.4 and 10.4. There are two cars have the same mpg.</p></li>
+<li><p>In this variable mpg, the minimum is 10.4.</p></li>
+<li><p>Similarly, the last stem, 33|9, represents the data value 33.9.
+There is one vehicle with maximum mpg of 33.9.</p></li>
+<li><p>Similar to the histogram, in the stem-and-leaf plot, we can
+visualize the distribution of a quantitative data. However, in the stem
+plot, we can identify the minimum, maximum and other data
+values.</p></li>
+<li><p>In stem-and-leaf plot displayed in R, you can identify the
 location of the median. The numbers on the left column to the stem
 indicate the data count. The one in parenthesis (3) show the location of
 the median in that particular stem.</p></li>
@@ -446,22 +447,22 @@ stem-and-leaf plot</strong>.</p>
 The leaves for one of the data sets go off to the right, and the leaves
 for the other go off to the left.</p>
 <hr />
-<p>Consider the data frame <em>CO2</em>. Display the back-to-back
-stem-and-leaf plot for the variable <strong>uptake</strong> by
-<strong>treatment</strong>.</p>
+<p>For example, consider the data frame <em>CO2</em>. Display the
+back-to-back stem-and-leaf plot for the variable <strong>uptake</strong>
+by <strong>treatment</strong>.</p>
 <hr />
 <blockquote>
 <p>Open in R GUI the data frame <strong>CO2</strong>.</p>
 </blockquote>
 <blockquote>
-<p>Graph &gt; Stem-and-leaf displays &gt; select Variable: uptake</p>
+<p>GRAPH &gt; STEM-AND-LEAF DISPLAYS &gt; select Variable: uptake</p>
 </blockquote>
 <blockquote>
-<p>Click on Plot back-to-back by &gt; Groups variable: Treatment &gt;
+<p>Click on PLOT BACK-TO-BACK BY &gt; Groups variable: Treatment &gt;
 OK</p>
 </blockquote>
 <blockquote>
-<p>Click in the <strong>Options</strong> tab &gt; Parts Per Stem: 1 &gt;
+<p>Click On the <strong>Options</strong> tab &gt; Parts Per Stem: 1 &gt;
 OK</p>
 </blockquote>
 <hr />
@@ -482,28 +483,35 @@ _____________________________________________________________</code></pre>
 <hr />
 <p><strong>Some Observations:</strong></p>
 <ul>
-<li><p>The leaves to the left of the stem represent the uptake data for
-the nonchilled treatment. The uptake data for the chilled are on the
-right.</p></li>
-<li><p>Only the chilled treatment have uptake data, 0|79. It represents
-the values 7 and 9. The minimum intake for chilled treatment is 7. For
-the unchilled treatment, the minimum is 10. The maximum values are 49
-and 42 for nonchilled and chilled treatments.</p></li>
-<li><p>The of carbon dioxide rates seem to be affected at different
-temperature conditions. At room temperature, the CO2 rates is about 32
-<span class="math inline">\(\mu mol/m^2\)</span> sec. However, it drops
-approximately to 18 <span class="math inline">\(\mu mol/m^2\)</span> sec
-on chilled conditions. The variability of CO2 readings are also
-significant. Level of CO2 lower than 30 <span class="math inline">\(\mu
-mol/m^2\)</span> are commonly associated to chilled conditions, and more
-than 30 to room temperature. As a consequence, ….</p></li>
+<li><p>Uptake data values for the nonchilled treatment are on the left
+side of the stem-and-leaf plot. The uptake data values for the chilled
+are on the right. See labels on the top.</p></li>
+<li><p>Only the chilled treatment have uptake data, 0|79. They represent
+the values 7 and 9. The minimum intake for chilled treatment is 7 and
+the maximum is 42.</p></li>
+<li><p>For the unchilled treatment, the minimum is 10 and the maximum
+values is 45.</p></li>
+<li><p>Although the spread of the CO2 update data is about the same, the
+back-to-back stem-and-leaf plot reveals that the CO2 uptake distribution
+has different data range for each temperature condition. Chilled
+condition shows slightly lower range with respect nonchilled.
+<em>(Possible explanation?)</em></p></li>
+<li><p>Nonchilled condition shows one mode around 30s while chilled two
+possible modes. One at 10 and another at 30s. <em>(Possible
+explanation?)</em></p></li>
+<li><p>In overall, there is not evidence of unusual observations too far
+from the rest of the data.</p></li>
+<li><p>The plot also suggest nonchilled condition has a median of 39
+while chilled is 20 <em>(number between 19 and 21 in stem
+plot)</em>.</p></li>
 </ul>
 <hr id="d9-3">
 <h1>
 Activity
 </h1>
-<p>Display a Back-to-Back Stem plot to compare the uptake distribution
-by origin of the plant <em>(Type)</em>.</p>
+<p>Using the steps given in this section, replicate the Back-to-Back
+Stem plot displayed below. In this exercise, you compare the effect of
+the plant location <em>(Type)</em> on the CO2 uptake.</p>
 <pre><code>___________________________________________________________________
   1 | 2: represents 12, leaf unit: 1 
 CO2$uptake[CO2$Type == &quot;Quebec&quot;]

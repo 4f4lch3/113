@@ -1,0 +1,31 @@
+
+p {
+	font-size: 18px
+}
+
+
+tr {
+	border-bottom: 1px solid black;
+	font-size: 18px
+}
+
+td, th {
+	padding: 8px
+}
+
+
+#toc {
+	float: left;
+	padding-top: 1%;
+	width: 15%;
+	background: #EEEEEE;
+	position: fixed;
+}
+
+#syllabus{
+	float: left;
+	width: 70%;
+	margin-left: 30%;
+}
+
+
