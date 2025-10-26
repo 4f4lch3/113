@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang xml:lang>
   <head>
-    <title>Introduction to Data Day 3</title>
+    <title>Hypothesis Test for a population Mean: T test</title>
     <meta charset="utf-8" />
     <meta name="date" content="2025-11-10" />
     <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
@@ -17,14 +17,14 @@ document.addEventListener('DOMContentLoaded', function(e) {
   }
 });
 </script>
-    <style type="text/css">.title-slide {background-color: #073763;color: white;}.remark-slide-content {padding: 1em 1em 1em 1em;line-height: 1.3;font-family: "Comic Sans";}.red {color:red;}.small{font-size: 13px;}.center{text-align: center;}.u{text-decoration: underline;}.bkgrey{background-color: #F0F0F0;}.highlt{background-color: #FFFF00;}.line11{line-height: 1.1;}table, th, td {border: 1px solid black;border-collapse: collapse;text-align: center;padding: 8px;}table{margin-left:auto;margin-right:auto;}th{background-color: #D4D4D4;}</style>
+    <style type="text/css">.title-slide {background-color: #073763;color: white;}.remark-slide-content {font-size: 120%;padding: 1em 1em 1em 1em;line-height: 1.3;font-family: "Comic Sans";}.red {color:red;}.small{font-size: 13px;}.center{text-align: center;}.u{text-decoration: underline;}.bkgrey{background-color: #F0F0F0;}.highlt{background-color: #FFFF00;}.line11{line-height: 1.1;}table, th, td {border: 1px solid black;border-collapse: collapse;text-align: center;padding: 8px;}table{margin-left:auto;margin-right:auto;}th{background-color: #D4D4D4;}</style>
   </head>
   <body>
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
 .title[
-# Introduction to Data Day 3
+# Hypothesis Test for a population Mean: T test
 ]
 .date[
 ### November 10, 2025
@@ -34,334 +34,312 @@ class: center, middle, inverse, title-slide
 
 
 
-### Background information
+### Hypothesis Test For A Population Mean *(when `\(\sigma\)` is unknown)*
 
 --
 
-The **contingency table** summarizes the frequency distribution between TWO categorical variables.
+When `\(\bar{X}\)` is the mean of a sample from a normal population, the quantity
+
+`\(\frac{\bar{x} - \mu}{S/\sqrt{n}}\)`
+
+has a Student&#39;s t distribution with **n - 1** degrees of freedom.
 
 --
 
-**Exercise:** A group of 121 doctors and nurses volunteered to run a health fair. Each volunteer worked one shift. The table below summarizes the data on the volunteers and their shifts
-
-. | Morning | Afternoon | Evening
-:----|:----:|:----:|:----:
-Doctor | 22 | 27 | 13
-Nurse | 16 | 36 | 7
-
-
-
-Suppose a volunteer from the health fair is chosen at random. What is the probability that the volunteer is a doctor or worked the evening shift?
-
----
-
-### The Marginal Table
-
-
-The marginal table is a contingency table with the total columns and rows.
-
-
-. | Morning | Afternoon | Evening | **Total**
-:----|:----:|:----:|:----:|----:
-Doctor | 22 | 27 | 13 | **62**
-Nurse | 16 | 36 | 7 | **59**
-**Total** | **38** | **63** | **20** | **121**
-
-
-The marginal table is necessary to compute probabilities.
+**Assumptions to consider:**
 
 --
 
-What is the probability that the volunteer is a doctor or worked the evening shift?
+- We have a simple random sample
 
 --
 
-- Consider the events: D = Volunteer is a doctor, E = Volunteer works in the evening.
-
---
-
-- Using set notation: What is `\(P(D \cup E)\)`?
-
---
-
-According to the probability rules: 
-
-
-- `\(P(D \cup E) = P(D) + P(E) - P(D \cap E)\)`
-
----
-
-. | Morning | Afternoon | Evening | Total
-:----|:----:|:----:|:----:|----:
-Doctor | 22 | 27 | 13 | 62
-Nurse | 16 | 36 | 7 | 59
-Total | 38 | 63 | 20 | 121
-
---
-
-- P(D) = 62/121, P(E) = 20/121, `\(P(D \cap E)\)` = 13/121
-
---
-
-- `\(P(D \cup E)\)` = 62/121 + 20/121 - 13/121
-
---
-
-- `\(P(D \cup E)\)` = 69/121
+- The sample size is large (n &gt; 30), OR the population is approximately normal.
 
 
 ---
 
-What is the probability that the volunteer worked the morning shift, given that the volunteer is a nurse?
-
-
-
-. | Morning | Afternoon | Evening | Total
-:----|:----:|:----:|:----:|----:
-Doctor | 22 | 27 | 13 | 62
-**Nurse** | 16 | 36 | 7 | **59**
-Total | 38 | 63 | 20 | 121
+### The P-value Method
 
 --
 
-- Consider the following events: N = Volunteer is a nurse, and M = Volunteer works in the morning.
+If the assumptions are satisfied, then proceed with the following steps:
 
 --
 
-- Using set notation: What is P(M | N)?
+- STEP 1: State the null and alternate hypotheses. The null hypothesis is of the form Ho: `\(\mu\)` = `\(\mu_o\)` where `\(\mu_o\)` is the hypothesized value of the population mean.
 
 --
 
-This is an example of *conditional* probability. The condition is the information known prior the computation of the probability.
+- STEP 2: If making a decision, choose a significance level `\(\alpha\)`.
 
----
+--
 
-On the marginal table, consider the condition:
+- STEP 3: Compute the test statistic, t = `\(\frac{\bar{x} - \mu_o}{S/\sqrt{n}}\)`
 
-. | Morning | Afternoon | Evening | Total
-:----|:----:|:----:|:----:|----:
-Doctor | . | . | . | .
-**Nurse** | 16 | 36 | 7 | **59**
-Total | . | . | . | .
+--
 
+- STEP 4: Compute the P-value of the test statistic. Use he ALEKS function P(T `\(\geq\)` t with df = ...). The degrees of freedom are n - 1.
 
-Compute the probability:
+--
 
+- STEP 5: Interpret the P-value. If making a decision, reject Ho if the P-value is less than or equal to the significance level `\(\alpha\)`.
 
-- &lt;p&gt; 16/59 &lt;/p&gt;
+--
 
+- STEP 6: State a conclusion.
 
 
 ---
 
-### Contingency Table in R
+### The Critical Value Method
 
 --
 
-Let&#39;s use the contingency table from the previous exercise.
-
-- Open R GUI: library(Rcmdr)
-
-- STATISTICS &gt; CONTINGENCY TABLES &gt; ENTER AND ANALYZE TWO-WAY TABLE
-
-- Number of Columns: 3 *(move slide to the right)*
-
-- Complete the table below **Enter counts:** 
-
-- Click on the STATISTICS tab &gt; unselect Chi-square test of independence
-
----
-
-For **unconditional probabilities**
+- STEP 1: State the null and alternate hypotheses. The null hypothesis is of the form Ho: `\(\mu\)` = `\(\mu_o\)` where `\(\mu_o\)` is the hypothesized value of the population mean.
 
 --
 
-- Compute Percentages: Percentages of total &gt; OK
+- STEP 2: Choose a significance level `\(\alpha\)`, and find the critical value or values. Use n - 1 degrees of freedom, where n is the sample size.
 
-For conditional probabilities
+--
 
-- Compute Percentages: Row percentages &gt; OK *(when conditioning on rows)*
-
-- Compute Percentages: Column percentages &gt; OK *(when conditioning on columns)*
-
----
-
-What is the probability that the volunteer is a doctor or worked the evening shift?
+- STEP 3: Compute the test statistic, t = `\(\frac{\bar{x} - \mu_o}{S/\sqrt{n}}\)`
 
 
-- Compute Percentages: Percentages of total &gt; OK
+--
 
-. | Morning | Afternoon | Evening | Total
-:----|:----:|:----:|:----:|----:
-Doctor | 18.2 | 22.3 | **10.7** | **51.2**
-Nurse | 13.2 | 29.8 | 5.8 | 48.8
-Total | 31.4 | 52.1 | **16.5** | 100.0
+- STEP 4: Determine whether to reject Ho, as follows. 
 
-- 51.2 - 16.5 - 10.7 = 57% which is close to 69/121 when rounding to one decimal place.
+- - Left-tailed: `\(H_1: \mu &lt; \mu_o\)`, reject if t `\(\leq -t_{\alpha}\)`
 
+- - Right-tailed: `\(H_1: \mu &gt; \mu_o\)`, reject if t `\(\geq t_{\alpha}\)`
 
----
+- - Two-tailed: `\(H_1: \mu \neq \mu_o\)`, reject if t `\(\leq -t_{\alpha/2}\)` or t `\(\geq t_{\alpha}\)`
 
-What is the probability that the volunteer worked the morning shift, given that the volunteer is a nurse?
+--
 
-- Compute Percentages: Row percentages &gt; OK *(when conditioning on rows)*
-
-. | Morning | Afternoon | Evening | Total | Count
-:----|:----:|:----:|:----:|:----:|----:
-Doctor | 35.5 | 43.5 | 21.0 | 100 | 62
-Nurse | **27.1** | 61.0 | 11.9 | 100 | 59
-
-- 27.1% which is close to 16/69 when rounding to one decimal place. 
+- STEP 5: State a conclusion
 
 
 ---
 
 
-In this example, use the data frame **airquality** make a contingency table with the variables *Temp* and *Month*, and display the total marginal.
+An orange grower is introducing a new variety of orange. The grower claims that the new oranges have a mean pH of 5. To test the claim, an independent researcher chose a random sample of 24 of the new oranges, finding they had a sample mean pH of 4.8 with a sample standard deviation of 0.6. Assume that the population of pH values of the new oranges is approximately normally distributed.
 
+Complete the parts below to perform a hypothesis test to see if there is enough evidence, at the 0.05 level of significance, to reject that `\(\mu\)`, the mean pH of the new oranges, is 5.
 
-Open R GUI: library(Rcmdr)
+--
 
-- STEP 1: DATA &gt; DATA IN PACKAGES &gt; READ DATA SET FROM ATTACHED PACKAGE
+- Ho: `\(\mu\)` = 5
 
-- STEP 2: Enter name of data set: **airquality** &gt; OK
+--
 
-- STEP 3: DATA &gt; MANAGE VARIABLES IN ACTIVE DATA SET &gt; CONVERT NUMERIC VARIABLES TO FACTOR
+- `\(H_1\)`: `\(\mu \neq\)` 5
 
-- STEP 4: By pressing the keyboard key **Ctrl**, select **Month** and **Temp**.  
+--
 
-- STEP 5: Factor levels: Use numbers &gt; OK &gt; Yes &gt; Yes
+- The population standard deviation, `\(\sigma\)`, is **UNKNOWN** and the sample size is large (generally n &gt; 30) **OR** the population distribution is at least approximately normal.
 
-- STEP 6: STATISTICS &gt; CONTINGENCY TABLES &gt; TWO-WAY TABLE
+--
 
-- STEP 7: Row variable: Temp &gt; Column variable: Month
+- T = `\(\frac{\bar{x} - \mu_0}{\frac{S}{\sqrt{n}}}\)`
 
-- STEP 8: Click on the STATISTICS tab 
+--
 
-- STEP 9: Uncheck Chi-square test of independence &gt; OK
+- T = `\(\frac{4.8 - 5}{\frac{0.6}{\sqrt{24}}}\)` = -1.633
+
 
 ---
+
+The rejection region approach *(Critical value method)*
+
+--
+
+- Identify `\(\alpha\)` and the type of test.
+
+--
+
+- In ALEKS calculator: `\(t_{0.025; df=23}\)`. Use 0.025 because this is a two-tailed test.
+
+--
+
+- The rejection region is: `\((-\infty, -2.069)\)` and `\((2.069, \infty)\)`
+
+--
+
+- Conclusion: Since the value of the test statistic doesn&#39;t lie in the rejection region, the null hypothesis is not rejected. So, there is not enough evidence to reject the claim that the mean pH of the new oranges is 5.
+
+--
+
+The P-Value approach
+
+--
+
+- In ALEKS calculator: 2*P(t &gt; 1.633 with df = 23)
+
+--
+
+- Even though the test statistic T = -1.633, the ALEKS calculator function provides the area for the right tail in this two-tailed test *(multiplication by 2)*. For this reason, you have to use the positive value.
+
+--
+
+- P-value = 0.116. Since P-value &gt; `\(\alpha\)`, fail to reject Ho.
+
+
+---
+
+
+---
+
+
+Tardigrades, or water bears, are a type of micro-animal famous for their resilience. In examining the effects of radiation on organisms, an expert claimed that the amount of gamma radiation needed to sterilize a colony of tardigrades no longer has a mean of 1200 Gy (grays). (For comparison, humans cannot withstand more than 10 Gy.) A random sample of 21 tardigrade colonies found that the amount of gamma radiation needed to sterilize a colony had a sample mean of 1165 Gy, with a sample standard deviation of 63 Gy. Assume that the population of amounts of gamma radiation needed to sterilize a colony of tardigrades is approximately normally distributed.
+
+Complete the parts below to perform a hypothesis test to see if there is enough evidence, at the 0.10 level of significance, to support that `\(\mu\)`, the mean amount of gamma radiation needed to sterilize a colony of tardigrades, is not equal to 1200 Gy.
+
+--
+
+(a) State the null hypothesis Ho and the alternative hypothesis `\(H_1\)` that you would use for the test.
+
+--
+
+- Ho: `\(\mu\)` = 1200
+
+--
+
+- `\(H_1: \mu \neq\)` 1200
+
+---
+
+(b) Perform a hypothesis test. The test statistic has a t distribution (so the test is a &quot;t test&quot;). Here is some other information to help you with your test.
+
+- `\(t_{0.05}\)` is the value that cuts off an area of 0.05 in the right tail.
+
+- The value of the test statistic is given by `\(t = \frac{\bar{X} - \mu}{S/\sqrt{n}}\)`
+
+
+--
+
+
+Step 1: Enter the number of degrees of freedom.
+
+--
+
+- df = n - 1 = 21 - 1 = 20
+
+--
+
+Step 2: Select one-tailed or two tailed.
+
+--
+
+- Two-tailed
+
+--
+
+Step 3: Enter the critical value(s). *(Round to 3 decimal places)*
+
+--
+
+- Using ALEKS calculator, compute `\(t_{0.05; df = 20}\)`.
+
+--
+
+- `\(t_{0.05; df = 20}\)` = 1.725. The critical values are -1.725 and 1.725
+
+
+---
+
+Step 4: Enter the test statistic.
+
+--
+
+- `\(t = \frac{\bar{X} - \mu}{S/\sqrt{n}} = \frac{1165 - 1200}{63/\sqrt{21}}\)`
+
+--
+
+- t = -2.546
+
+--
+
+(c) Based on your answer to part (b), choose what can be concluded, at the 0.10 level of significance, about the claim made by the expert.
+
+--
+
+- Reject Ho
+
+--
+
+- Since the value of the test statistic lies in the rejection region, the null hypothesis is rejected. So, there is enough evidence to support the claim that the mean amount of gamma radiation needed to sterilize a colony of tardigrades is not equal to 1200 Gy.
+
+---
+
+###  Testing the Population Mean in R Studio
+
+
+**How much is in that can?** A machine that fills beverage cans is supposed to put 12 ounces of beverage in each can. Following are the amounts measured in a simple random sample of eight cans: 11.96, 12.10, 12.04, 12.13, 11.98, 12.05, 11.91, 12.03. Assuming a normal distribution for the amount of beverage dispensed by the machine, perform a hypothesis test to determine whether the mean volume differs from 12 ounces. Use the `\(\alpha\)` = 0.05 level of significance. What do you conclude?
+
+--
+
+&gt; Step 1: Open R GUI: library(Rcmdr)
+
+&gt; Step 2: Click on Data &gt; New data set &gt; Enter name for data set: **cans** &gt; OK
+
+&gt; Step 3: Click &quot;Add row&quot; fifteen times because there are 8 observations.
+
+&gt; Step 4: Change the columns names from V1 to **ounce**.
+
+&gt; Step 5: Enter the corresponding data *(see above)* like you do in Excel. When you finish, click OK.
+
+---
+
+
+**Compute the test**
+
+&gt; Step 6: Statistics &gt; Means &gt; Single-sample t-test
+
+&gt; Step 7: Select the variable: dist
+
+&gt; Step 8: Null Hypothesis: mu = 12 &gt; OK
+
+--
 
 
 ```
-    
-     5 6 7 8 9
-  56 1 0 0 0 0
-  57 3 0 0 0 0
-  58 2 0 0 0 0
-  59 2 0 0 0 0
-  61 3 0 0 0 0
-  62 2 0 0 0 0
-  63 0 0 0 0 1
-  64 1 0 0 0 1
-  65 1 1 0 0 0
-  66 3 0 0 0 0
-  67 2 1 0 0 1
-  68 2 0 0 0 2
-  69 2 0 0 0 1
-  70 0 0 0 0 1
-  71 0 0 0 0 3
-  72 1 1 0 1 0
-  73 1 2 1 0 1
-  74 2 1 1 0 0
-  75 0 1 0 1 2
-  76 1 4 0 1 3
-  77 0 3 0 2 2
-  78 0 2 0 2 2
-  79 1 2 0 3 0
-  80 0 2 1 1 1
-  81 1 0 5 3 2
-  82 0 2 4 2 1
-  83 0 1 3 0 0
-  84 0 1 3 0 1
-  85 0 1 3 1 0
-  86 0 0 3 4 0
-  87 0 2 1 1 1
-  88 0 0 2 1 0
-  89 0 0 1 1 0
-  90 0 1 0 2 0
-  91 0 0 1 0 1
-  92 0 1 2 1 1
-  93 0 1 0 0 2
-  94 0 0 0 2 0
-  96 0 0 0 1 0
-  97 0 0 0 1 0
+
+	One Sample t-test
+
+data:  x
+t = 0.9726, df = 7, p-value = 0.3632
+alternative hypothesis: true mean is not equal to 12
+95 percent confidence interval:
+ 11.96422 12.08578
+sample estimates:
+mean of x 
+   12.025 
 ```
 
+--
 
----
+**NOTE:** By default, R assumes a two-tailed test (not equal) with alpha 0.05. In addition, recall that alpha is 1 - confidence level. You may need to adjust these parameters according to the conditions in the exercise.
 
-You may display the **Count** row and column by following STEP 6, STEP 8 and selecting either Row Percentages or Column Percentages &gt; OK.
-
-
----
-
-### Combining Rows and Columns
-
-Although it is possible to combine rows and columns in R, DD3 requires to do this exercise in **Excel**.
-
-Using original contingency table, complete the following table by counting the frequencies corresponding to the new categories: 
-
-Temp (F) | Months&lt;br&gt;5-6 | Months&lt;br&gt;7-8-9
-:----|:----:|:----:
-50 - 59 | . | .
-60 - 69 | . | .
-70 - 79 | . | .
-80 - 89 | . | .
-90 - 99 | . | .
 
 
 ---
 
-
-DO NOT FORGET to include the total count for rows and columns.
-
-
-Temp (F) | Months&lt;br&gt;5-6 | Months&lt;br&gt;7-8-9 | **Total**
-:----|:----:|:----:|:----:
-50 - 59 | 8 | 0 | 8
-60 - 69 | 18 | 6 | 24
-70 - 79 | 22 | 26 | 48
-80 - 89 | 10 | 46 | 56
-90 - 99 | 3 | 14 | 17
-**Total** | 61 | 92 | 153
-
-
-What is the probability that the temperature is less than 70 degrees? *(Write your answer in fraction. Do not simplify)*.
+- The P-value of 0.3632 is greater than alpha, 0.05.
 
 --
 
-- `\(\frac{32}{153}\)`
-
-
----
-
-Given the sample was taken between July and September, what is the probability that the temperature is less than 70 degrees? *(Write your answer in fraction. Do not simplify)*.
-
-Temp (F) | Months&lt;br&gt;5-6 | Months&lt;br&gt;7-8-9 | **Total**
-:----|:----:|:----:|:----:
-50 - 59 | 8 | 0 | 8
-60 - 69 | 18 | 6 | 24
-70 - 79 | 22 | 26 | 48
-80 - 89 | 10 | 46 | 56
-90 - 99 | 3 | 14 | 17
-**Total** | 61 | 92 | 153
+- Therefore, Fail to reject the null hypothesis.
 
 --
 
-- `\(\frac{6}{92}\)` 
+- In conclusion, there is not enough evidence to suggest that the mean volume differs from 12 ounces.
 
+--
 
----
-
-
-
-
-
-
-
-
-
+- In other words, there is not evidence the machine is broken.
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang xml:lang>
   <head>
-    <title>Hypothesis Test for a population Mean: T test</title>
+    <title>Review for Exam 3</title>
     <meta charset="utf-8" />
-    <meta name="date" content="2025-11-24" />
+    <meta name="date" content="2025-11-17" />
     <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
 document.addEventListener('DOMContentLoaded', function(e) {
@@ -17,181 +17,253 @@ document.addEventListener('DOMContentLoaded', function(e) {
   }
 });
 </script>
-    <style type="text/css">.title-slide {background-color: #073763;color: white;}.remark-slide-content {padding: 1em 1em 1em 1em;line-height: 1.3;font-family: "Comic Sans";}.red {color:red;}.small{font-size: 13px;}.center{text-align: center;}.u{text-decoration: underline;}.bkgrey{background-color: #F0F0F0;}.highlt{background-color: #FFFF00;}.line11{line-height: 1.1;}table, th, td {border: 1px solid black;border-collapse: collapse;text-align: center;padding: 8px;}table{margin-left:auto;margin-right:auto;}th{background-color: #D4D4D4;}</style>
+    <style type="text/css">.title-slide {background-color: #073763;color: white;}.remark-slide-content {font-size: 120%;padding: 1em 1em 1em 1em;line-height: 1.3;font-family: "Comic Sans";}.red {color:red;}.small{font-size: 13px;}.center{text-align: center;}.u{text-decoration: underline;}.bkgrey{background-color: #F0F0F0;}.highlt{background-color: #FFFF00;}.line11{line-height: 1.1;}table, th, td {border: 1px solid black;border-collapse: collapse;text-align: center;padding: 8px;}table{margin-left:auto;margin-right:auto;}th{background-color: #D4D4D4;}</style>
   </head>
   <body>
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
 .title[
-# Hypothesis Test for a population Mean: T test
+# Review for Exam 3
 ]
 .date[
-### November 24, 2025
+### November 17, 2025
 ]
 
 ---
 
 
 
-### Hypothesis Test For A Population Mean *(when `\(\sigma\)` is unknown)*
+
+Grand Sun Buffet is a large restaurant chain. After paying for a meal at Grand Sun Buffet, customers are asked to rate the quality of the food as a 1, 2, 3, 4, or 5, where a rating of 1 means &quot;not good&quot; and 5 means &quot;excellent&quot;. The customers&#39; ratings have a population mean of `\(\mu\)` = 3.63, with a standard deviation of `\(\sigma\)` = 1.65. Suppose that we will take a random sample of n = 8 customers&#39; ratings. Let `\(\bar{X}\)` represent the sample mean of the 8 customers&#39; ratings. Consider the sampling distribution of the sample mean `\(\bar{X}\)`.
+
+Complete the following. Do not round any intermediate computations. Write your answers with two decimal places, rounding if needed. 
+
+
+(a) Find `\(\mu_{\bar{x}}\)` (the mean of the sampling distribution of the sample mean).
 
 --
 
-When `\(\bar{X}\)` is the mean of a sample from a normal population, the quantity
 
-`\(\frac{\bar{x} - \mu}{S/\sqrt{n}}\)`
-
-has a Student&#39;s t distribution with **n - 1** degrees of freedom.
+- `\(\mu_{\bar{x}}\)` = 3.63
 
 --
 
-**Assumptions to consider:**
+(b) Find `\(\sigma_{\bar{x}}\)` (the standard deviation of the sampling distribution of the sample mean).
+
 
 --
 
-- We have a simple random sample
+- `\(\sigma_{\bar{x}} = \sigma/\sqrt{n}\)`
 
 --
 
-- The sample size is large (n &gt; 30), OR the population is approximately normal.
+- `\(\sigma_{\bar{x}}\)` = `\(1.65/\sqrt{8}\)`
+
+--
+
+- `\(\sigma_{\bar{x}}\)` = 0.58
 
 
 ---
 
-### The P-value Method
+CorpPlus is a large corporation with many employees. You work for the human resources department of CorpPlus and want to estimate the population proportion of all employees who say the corporation is a great place to work. So, you will survey a random sample of 80 employees from CorpPlus and ask them whether they think the corporation is a great place to work.
 
---
+Follow the steps below to construct a 99% confidence interval for the population proportion of all employees who say the corporation is a great place to work.
 
-If the assumptions are satisfied, then proceed with the following steps:
 
---
+Great place to work | Number | Proportion
+----|----|----
+Yes | 68 | 0.85
+No | 12 | 0.15
 
-- STEP 1: State the null and alternate hypotheses. The null hypothesis is of the form Ho: `\(\mu\)` = `\(\mu_o\)` where `\(\mu_o\)` is the hypothesized value of the population mean.
 
---
-
-- STEP 2: If making a decision, choose a significance level `\(\alpha\)`.
-
---
-
-- STEP 3: Compute the test statistic, t = `\(\frac{\bar{x} - \mu_o}{S/\sqrt{n}}\)`
-
---
-
-- STEP 4: Compute the P-value of the test statistic. Use he ALEKS function P(T `\(\geq\)` t with df = ...). The degrees of freedom are n - 1.
-
---
-
-- STEP 5: Interpret the P-value. If making a decision, reject Ho if the P-value is less than or equal to the significance level `\(\alpha\)`.
-
---
-
-- STEP 6: State a conclusion.
+Enter the values of the sample size, the point estimate of the population proportion, and the critical value you need for your 99% confidence interval. *ALEKS: (Choose the correct critical value from the table of critical values provided.)*
 
 
 ---
 
-### The Critical Value Method
+Enter the values of the sample size, the point estimate of the population proportion, and the critical value you need for your 99% confidence interval. *ALEKS: (Choose the correct critical value from the table of critical values provided.)*
+
+
+Confidence Level | Critical Value
+----|----
+99% | `\(Z_{0.005}\)` = 2.576
+95% | `\(Z_{0.025}\)` = 1.960
+90% | `\(Z_{0.050}\)` = 1.645
 
 --
 
-- STEP 1: State the null and alternate hypotheses. The null hypothesis is of the form Ho: `\(\mu\)` = `\(\mu_o\)` where `\(\mu_o\)` is the hypothesized value of the population mean.
+Sample Size (n)
 
 --
 
-- STEP 2: Choose a significance level `\(\alpha\)`, and find the critical value or values. Use n - 1 degrees of freedom, where n is the sample size.
+- n = 80
 
 --
 
-- STEP 3: Compute the test statistic, t = `\(\frac{\bar{x} - \mu_o}{S/\sqrt{n}}\)`
+Point Estimate `\((\hat{p})\)`
+
+--
+
+- `\(\frac{68}{80}\)` = 0.85
+
+---
+
+Critical Value (99%)
+
+--
+
+- `\(Z_{0.005}\)` = 2.576
+
+--
+
+99% Confidence Interval for p
+
+--
+
+- Point estimate `\(\pm\)` Margin of error
+
+--
+
+- Point estimate `\(\pm\)` (Critical value)(Standard error for `\(\hat{p}\)`)
+
+--
+
+- `\(\hat{p} \pm Z_{0.005}\sqrt{\frac{\hat{p}(1 - \hat{p})}{n}}\)`
+
+--
+
+- `\(0.85 \pm (2.576)\sqrt{\frac{0.85(1 - 0.85)}{80}}\)`
+
+--
+
+- `\(0.85 \pm 0.103\)`
 
 
 --
 
-- STEP 4: Determine whether to reject Ho, as follows. 
-
-- - Left-tailed: `\(H_1: \mu &lt; \mu_o\)`, reject if t `\(\leq -t_{\alpha}\)`
-
-- - Right-tailed: `\(H_1: \mu &gt; \mu_o\)`, reject if t `\(\geq t_{\alpha}\)`
-
-- - Two-tailed: `\(H_1: \mu \neq \mu_o\)`, reject if t `\(\leq -t_{\alpha/2}\)` or t `\(\geq t_{\alpha}\)`
+- Lower limit: 0.85 - 0.103 = 0.747
 
 --
 
-- STEP 5: State a conclusion
+- Upper limit: 0.85 + 0.103 = 0.953
+
+
+---
+
+A researcher is going to perform a two-tailed hypothesis test. The test statistic will follow a **standard normal distribution.**
+
+(a) The researcher might choose 0.01, 0.05, or 0.10 for the level of significance for the two-tailed test. For each potential choice for the level of significance, find the critical values. *Round your answers to three decimal places.*
+
+--
+
+Critical values at `\(\alpha\)` = 0.01
+
+--
+
+- In ALEKS calculator: `\(Z_{0.005}\)`
+
+--
+
+- `\(Z_{0.005}\)` = 2.576. Because it is a two-tailed test, just specify the right tail `\((\alpha/2)\)` in the ALEKS calculator function.
+
+--
+
+- The Z critical values are -2.576 and 2.576
+
+--
+
+Critical values at `\(\alpha\)` = 0.05 and `\(\alpha\)` = 0.10
+
+--
+
+- When `\(\alpha\)` = 0.05, compute in ALEKS `\(Z_{0.025}\)`. When `\(\alpha\)` = 0.10, compute in ALEKS `\(Z_{0.050}\)`
+
+---
+
+After choosing the level of significance, the researcher takes a sample and finds that the value of the test statistic is Z = 2.495. For which of the levels of significance would the null hypothesis be rejected? Choose all that apply. 
+
+
+- `\(\alpha\)` = 0.01
+
+- `\(\alpha\)` = 0.05
+
+- `\(\alpha\)` = 0.10
+
+- None of the above
+
+--
+
+- Ho is going to be rejected for those rejection regions that contain the test statistic Z = 2.495.
+
+--
+
+- When `\(\alpha\)` = 0.05, `\((-\infty, -1.96)\)` and `\((1.96, \infty)\)`
+
+- When `\(\alpha\)` = 0.10, `\((-\infty, -1.645)\)` and `\((1.645, \infty)\)`
+
 
 
 ---
 
 
-An orange grower is introducing a new variety of orange. The grower claims that the new oranges have a mean pH of 5. To test the claim, an independent researcher chose a random sample of 24 of the new oranges, finding they had a sample mean pH of 4.8 with a sample standard deviation of 0.6. Assume that the population of pH values of the new oranges is approximately normally distributed.
-
-Complete the parts below to perform a hypothesis test to see if there is enough evidence, at the 0.05 level of significance, to reject that `\(\mu\)`, the mean pH of the new oranges, is 5.
-
---
-
-- Ho: `\(\mu\)` = 5
-
---
-
-- `\(H_1\)`: `\(\mu \neq\)` 5
-
---
-
-- The population standard deviation, `\(\sigma\)`, is **UNKNOWN** and the sample size is large (generally n &gt; 30) **OR** the population distribution is at least approximately normal.
-
---
-
-- T = `\(\frac{\bar{x} - \mu_0}{\frac{S}{\sqrt{n}}}\)`
-
---
-
-- T = `\(\frac{4.8 - 5}{\frac{0.6}{\sqrt{24}}}\)` = -1.633
 
 
 ---
 
-The rejection region approach *(Critical value method)*
+---
+
+At your college, there is a school-sponsored website that matches people looking for roommates. The school claims that 34% of students will find a match their first time using the site. You are a writer for the school newspaper and are suspicious of the claim. To test it, you decide to perform a hypothesis test. To do so, you choose a random sample of 170 students who visited the site looking for a roommate. Of the students surveyed, 51 said they found a match their first time using the site.
+
+(a) You confirm that it is appropriate to perform a Z-test. 	
 
 --
 
-- Identify `\(\alpha\)` and the type of test.
+- Why is a Z-test appropriate?
 
 --
 
-- In ALEKS calculator: `\(t_{0.025; df=23}\)`. Use 0.025 because this is a two-tailed test.
+- The Z-test for p is valid for **LARGE** samples only.
 
 --
 
-- The rejection region is: `\((-\infty, -2.069)\)` and `\((2.069, \infty)\)`
+- The sample is large if `\(np_o \geq 10\)` and `\(n(1 - p_o) \geq 10\)`
 
 --
 
-- Conclusion: Since the value of the test statistic doesn&#39;t lie in the rejection region, the null hypothesis is not rejected. So, there is not enough evidence to reject the claim that the mean pH of the new oranges is 5.
+- State the Hypotheses: Ho: p = 0.34 and `\(H_1: p \neq\)` 0.34
 
 --
 
-The P-Value approach
+- Checking Assumptions for a large sample: `\(np_o\)` = (170)(0.34) = 57.8 and `\(n(1 - p_o)\)` = (170)(0.66) = 112.2
 
 --
 
-- In ALEKS calculator: 2*P(t &gt; 1.633 with df = 23)
-
---
-
-- Even though the test statistic T = -1.633, the ALEKS calculator function provides the area for the right tail in this two-tailed test *(multiplication by 2)*. For this reason, you have to use the positive value.
-
---
-
-- P-value = 0.116. Since P-value &gt; `\(\alpha\)`, fail to reject Ho.
-
+- Therefore, a Z-test is appropriate.
 
 ---
 
+(b) Find Z, the value of the test statistic for your Z-test. Round your answer to three or more decimal places. 
+
+--
+
+- `\(Z = \frac{\hat{p} - p_o}{\sqrt{\frac{p_o(1 - p_o)}{n}}}\)`
+
+--
+
+- Sample proportion, `\(\hat{p}\)` = 51/170 = 0.3
+
+--
+
+- `\(Z = \frac{0.3 - 0.34}{\sqrt{\frac{0.34(1 - 0.34)}{170}}}\)`
+
+--
+
+- Z = -1.101
+
 
 ---
-
 
 Tardigrades, or water bears, are a type of micro-animal famous for their resilience. In examining the effects of radiation on organisms, an expert claimed that the amount of gamma radiation needed to sterilize a colony of tardigrades no longer has a mean of 1200 Gy (grays). (For comparison, humans cannot withstand more than 10 Gy.) A random sample of 21 tardigrade colonies found that the amount of gamma radiation needed to sterilize a colony had a sample mean of 1165 Gy, with a sample standard deviation of 63 Gy. Assume that the population of amounts of gamma radiation needed to sterilize a colony of tardigrades is approximately normally distributed.
 
@@ -274,72 +346,12 @@ Step 4: Enter the test statistic.
 
 ---
 
-###  Testing the Population Mean in R Studio
-
-
-**How much is in that can?** A machine that fills beverage cans is supposed to put 12 ounces of beverage in each can. Following are the amounts measured in a simple random sample of eight cans: 11.96, 12.10, 12.04, 12.13, 11.98, 12.05, 11.91, 12.03. Assuming a normal distribution for the amount of beverage dispensed by the machine, perform a hypothesis test to determine whether the mean volume differs from 12 ounces. Use the `\(\alpha\)` = 0.05 level of significance. What do you conclude?
-
---
-
-&gt; Step 1: Open R GUI: library(Rcmdr)
-
-&gt; Step 2: Click on Data &gt; New data set &gt; Enter name for data set: **cans** &gt; OK
-
-&gt; Step 3: Click &quot;Add row&quot; fifteen times because there are 8 observations.
-
-&gt; Step 4: Change the columns names from V1 to **ounce**.
-
-&gt; Step 5: Enter the corresponding data *(see above)* like you do in Excel. When you finish, click OK.
-
----
-
-
-**Compute the test**
-
-&gt; Step 6: Statistics &gt; Means &gt; Single-sample t-test
-
-&gt; Step 7: Select the variable: dist
-
-&gt; Step 8: Null Hypothesis: mu = 12 &gt; OK
-
---
-
-
-```
-
-	One Sample t-test
-
-data:  x
-t = 0.9726, df = 7, p-value = 0.3632
-alternative hypothesis: true mean is not equal to 12
-95 percent confidence interval:
- 11.96422 12.08578
-sample estimates:
-mean of x 
-   12.025 
-```
-
---
-
-**NOTE:** By default, R assumes a two-tailed test (not equal) with alpha 0.05. In addition, recall that alpha is 1 - confidence level. You may need to adjust these parameters according to the conditions in the exercise.
 
 
 
----
 
-- The P-value of 0.3632 is greater than alpha, 0.05.
 
---
 
-- Therefore, Fail to reject the null hypothesis.
-
---
-
-- In conclusion, there is not enough evidence to suggest that the mean volume differs from 12 ounces.
-
---
-
-- In other words, there is not evidence the machine is broken.
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
