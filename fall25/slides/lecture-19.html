@@ -155,6 +155,260 @@ For a **two-tailed test**, the test statistic value, T, is the SMALLER of the tw
 
 - There is not enough evidence to suggest that the population exam scores are different. 
 
+---
+
+### Single-Factor ANOVA and the F-Test
+
+--
+
+When two or more populations or treatments are being compared, the characteristic that distinguishes the population or treatments from one another is called the **factor** under investigation.
+
+--
+
+Employees of a certain state university system can choose from among four different health plans. Each plan differs somewhat from the others in terms of hospitalization coverage. Four random samples of recently hospitalized individuals were selected, each sample consisting of people covered by a different health plan. The length of the hospital stay (number of days) was determined for each individual selected. What hypotheses would you test to decide whether mean length of stay was related to health plan? `\(\phantom{Peck5, ex15.3, p.743}\)`
+
+--
+
+- In this example, there are **four** groups (treatments or populations). K = 4.
+
+--
+
+- *Question of interest:* Is the average hospital stay related to the health plan? 
+
+--
+
+- *Hypothesis to test:* All heath plans to have the same average hospital stay *(Null Hypothesis)*.
+
+---
+
+### Notation
+
+--
+
+- K = number of populations or treatments being compared
+
+--
+
+- `\(\mu_i\)` = `\(i^{th}\)` Population or treatment mean. i = 1,2,...,k
+
+--
+
+- `\(\sigma_i^2\)` = The `\(i^{th}\)` Population or treatment variance. i = 1,2,...,k
+
+--
+
+- `\(n_i\)` = The `\(i^{th}\)` sample size. i = 1,2,...,k
+
+--
+
+- `\(\bar{X}_i\)` = The `\(i^{th}\)` sample mean. i = 1,2,...,k
+
+--
+
+- `\(S^2_i\)` = The `\(i^{th}\)` sample variance. i = 1,2,...,k
+
+--
+
+- N = `\(n_1 + n_2 + ... + n_k\)`, total number of observations in the data set.
+
+--
+
+- T = `\(\sum_{i=1}^{k}\sum_{j=1}^{n_i} x_{ij}\)`, sum of all N observations in the data set.
+
+--
+
+- `\(\bar{X}\)` = `\(\frac{T}{N}\)`, grand mean.
+
+---
+
+### Assumptions for ANOVA
+
+--
+
+- Each of the K population or treatment response distributions is normal.
+
+--
+
+- `\(\sigma_1 = \sigma_2 = ... = \sigma_k\)`, the K normal distributions have identical standard deviations.
+
+--
+
+- The observations in the sample from any particular one of the K populations or treatments are independent of one another.
+
+--
+
+- When comparing population means, the K random samples are selected independently of one another. 
+
+- When comparing treatment means, treatments are assigned at random to subjects or objects (or subjects are assigned at random to treatments) *(completely randomized designed)*
+
+---
+
+### The Single-Factor ANOVA F Test
+
+--
+
+- Null Hypothesis, Ho: `\(\mu_1 = \mu_2 = ... = \mu_k\)`
+
+--
+
+- Test Statistic, F = `\(\frac{MSTr}{MSE}\)`
+
+--
+
+When Ho is true and the ANOVA assumptions are reasonable, F has an F distribution with `\(df_1\)` = k - 1 and `\(df_2\)` = N - k.
+
+--
+
+- Values of F more inconsistent with Ho than what was observed in the data are values even farther out in the upper tail, so the P-value is the area captured in the upper tail of the corresponding F curve. *(Hint: In ALEKS calculator, use P(F &gt; _) to calculate the P-value)*
+
+--
+
+A **mean square** is the sum of squares divided by its df. 
+
+--
+
+- Mean Square for Treatments, MSTr = `\(\frac{SSTr}{k - 1}\)`
+
+--
+
+- Mean Square for Errors, MSE = `\(\frac{SSE}{N - k}\)`
+
+---
+
+
+**SSTr** (Sum Squares Treatments) measures the differences *(variation)* among the k sample means.
+
+--
+
+- SSTr = `\(n_1(\bar{x_1} - \bar{X})^2 + n_2(\bar{x_2} - \bar{X})^2 + ... + n_k(\bar{x_k} - \bar{X})^2\)`
+
+
+--
+
+**SSE** (Sum Squares Errors) measures the variation &quot;within&quot; the k samples.
+
+--
+
+- SSE = `\((n_1 - 1)S^2_1 + (n_2 - 1)S^2_2 + ... + (n_k - 1)S^2_k\)`
+
+--
+
+When Ho is true `\((\mu_1 = \mu_2 = ... = \mu_k)\)`
+
+- `\(\mu_{mstr}\)` = `\(\mu_{mse}\)`
+
+--
+
+However, when Ho is false,
+
+- `\(\mu_{mstr}\)` &gt; `\(\mu_{mse}\)`
+
+--
+
+and the greater the differences among the `\(\mu\)`&#39;s, the larger the `\(\mu_{mstr}\)` will be relative to `\(\mu_{mse}\)`
+
+---
+
+### Summarizing and ANOVA
+
+--
+
+SOURCE | df | SS | MS | F
+----|----|----|----|----
+Treatments | k - 1 | SST | MST = `\(\frac{SST}{k - 1}\)` | F = `\(\frac{MST}{MSE}\)`
+Error | N - k | SSE | MSE = `\(\frac{SSE}{N - k}\)` | .
+Total | N - 1 |SSTo | . | .
+
+---
+
+
+**ANOVA-summary table.** A partially completed ANOVA table for a completely randomized design is shown here:
+
+SOURCE | df | SS | MS | F
+----|----|----|----|----
+Treatments | 4 | 24.7 | - | -
+Error | - | - | - | .
+Total | 34 | 62.4 | . | .
+
+
+*a)* Complete the ANOVA table.
+
+*b)* How many treatments are involved in the experiment?
+
+*c)* Do the data provide sufficient evidence to indicate a difference among the treatment means? Test using `\(\alpha\)` = 0.10.
+
+???
+
+
+\invisible{Mendenhall, p.620, Ex 12.2}
+
+---
+
+*a)* Complete the ANOVA table.
+
+
+SOURCE | df | SS | MS | F
+----|----|----|----|----
+Treatments | 4 | 24.7 | - | -
+Error | - | - | - | .
+Total | 34 | 62.4 | . | .
+
+--
+
+- Compare with the formula. k - 1 = 4; n - 1 = 34
+
+
+SOURCE | df | SS | MS | F
+----|----|----|----|----
+Treatments | k - 1 | SST | MST = `\(\frac{SST}{k - 1}\)` | F = `\(\frac{MST}{MSE}\)`
+Error | N - k | SSE | MSE = `\(\frac{SSE}{N - k}\)` | .
+Total | N - 1 |SSTo | . | .
+
+---
+
+SOURCE | df | SS | MS | F
+----|----|----|----|----
+Treatments | 4 | 24.7 | `\(\frac{24.7}{4}\)` = 6.175  | `\(\frac{6.175}{1.257}\)` = 4.91 
+Error | 30 | 37.7 | `\(\frac{37.7}{30}\)` = 1.257 | .
+Total | 34 | 62.4 | . | .
+
+--
+
+*b)* How many treatments are involved in the experiment? 
+
+--
+
+- There are 5 treatments. From the ANOVA table, the degrees of freedom for treatments is k - 1 = 4. 
+
+---
+
+*c)* Do the data provide sufficient evidence to indicate a difference among the treatment means? Test using `\(\alpha\)` = 0.10. Use the critical value approach. *(Hint: In ALEKS calculator use the function **F_**)*
+
+--
+
+- First, identify the degrees of freedom: `\(df_1 = 4\)` and `\(df_2 = 30\)`
+
+--
+
+- In ALEKS calculator type:   `\(F(0.10, dfn=4, dfd=30)\)`
+
+--
+
+- The corresponding F-critical value is 2.14, so the rejection region is `\([2.14, \infty)\)` 
+
+--
+
+- Since the F test , 4.91, is in the rejection region, F-test &gt; 2.14, reject the null hypothesis.
+
+--
+
+- At least one of those treatment average is different than the others.
+
+
+
+
+
+
 
 ---
 
