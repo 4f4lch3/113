@@ -359,8 +359,6 @@ display: none;
 </a> </span></p>
 </div>
 <div id="content">
-
-
 <p><strong style="background-color:yellow"> Exam 4 is on Module 8. In
 this document, I review some topics that may be challenging. If you want
 to go over other topics, please send your suggestion to <a href="mailto:afalche@hunter.cuny.edu" class="email">afalche@hunter.cuny.edu</a> </strong></p>
@@ -607,6 +605,344 @@ value.</p></li>
 scores are different.</p></li>
 </ul>
 <hr />
+</div>
+<div id="single-factor-anova-and-the-f-test" class="section level3">
+<h3>Single-Factor ANOVA and the F-Test</h3>
+<p>When two or more populations or treatments are being compared, the
+characteristic that distinguishes the population or treatments from one
+another is called the <strong>factor</strong> under investigation.</p>
+<p>Employees of a certain state university system can choose from among
+four different health plans. Each plan differs somewhat from the others
+in terms of hospitalization coverage. Four random samples of recently
+hospitalized individuals were selected, each sample consisting of people
+covered by a different health plan. The length of the hospital stay
+(number of days) was determined for each individual selected. What
+hypotheses would you test to decide whether mean length of stay was
+related to health plan? <span class="math inline">\(\phantom{Peck5,
+ex15.3, p.743}\)</span></p>
+<ul>
+<li><p>In this example, there are <strong>four</strong> groups
+(treatments or populations). K = 4.</p></li>
+<li><p><em>Question of interest:</em> Is the average hospital stay
+related to the health plan?</p></li>
+<li><p><em>Hypothesis to test:</em> All heath plans to have the same
+average hospital stay <em>(Null Hypothesis)</em>.</p></li>
+</ul>
+<hr />
+</div>
+<div id="notation" class="section level3">
+<h3>Notation</h3>
+<ul>
+<li><p>K = number of populations or treatments being compared</p></li>
+<li><p><span class="math inline">\(\mu_i\)</span> = <span class="math inline">\(i^{th}\)</span> Population or treatment mean. i =
+1,2,…,k</p></li>
+<li><p><span class="math inline">\(\sigma_i^2\)</span> = The <span class="math inline">\(i^{th}\)</span> Population or treatment variance.
+i = 1,2,…,k</p></li>
+<li><p><span class="math inline">\(n_i\)</span> = The <span class="math inline">\(i^{th}\)</span> sample size. i = 1,2,…,k</p></li>
+<li><p><span class="math inline">\(\bar{X}_i\)</span> = The <span class="math inline">\(i^{th}\)</span> sample mean. i = 1,2,…,k</p></li>
+<li><p><span class="math inline">\(S^2_i\)</span> = The <span class="math inline">\(i^{th}\)</span> sample variance. i =
+1,2,…,k</p></li>
+<li><p>N = <span class="math inline">\(n_1 + n_2 + ... + n_k\)</span>,
+total number of observations in the data set.</p></li>
+<li><p>T = <span class="math inline">\(\sum_{i=1}^{k}\sum_{j=1}^{n_i}
+x_{ij}\)</span>, sum of all N observations in the data set.</p></li>
+<li><p><span class="math inline">\(\bar{X}\)</span> = <span class="math inline">\(\frac{T}{N}\)</span>, grand mean.</p></li>
+</ul>
+<hr />
+</div>
+<div id="assumptions-for-anova" class="section level3">
+<h3>Assumptions for ANOVA</h3>
+<ul>
+<li><p>Each of the K population or treatment response distributions is
+normal.</p></li>
+<li><p><span class="math inline">\(\sigma_1 = \sigma_2 = ... =
+\sigma_k\)</span>, the K normal distributions have identical standard
+deviations.</p></li>
+<li><p>The observations in the sample from any particular one of the K
+populations or treatments are independent of one another.</p></li>
+<li><p>When comparing population means, the K random samples are
+selected independently of one another.</p></li>
+<li><p>When comparing treatment means, treatments are assigned at random
+to subjects or objects (or subjects are assigned at random to
+treatments) <em>(completely randomized designed)</em></p></li>
+</ul>
+<hr />
+</div>
+<div id="the-single-factor-anova-f-test" class="section level3">
+<h3>The Single-Factor ANOVA F Test</h3>
+<ul>
+<li><p>Null Hypothesis, Ho: <span class="math inline">\(\mu_1 = \mu_2 =
+... = \mu_k\)</span></p></li>
+<li><p>Test Statistic, F = <span class="math inline">\(\frac{MSTr}{MSE}\)</span></p></li>
+</ul>
+<p>When Ho is true and the ANOVA assumptions are reasonable, F has an F
+distribution with <span class="math inline">\(df_1\)</span> = k - 1 and
+<span class="math inline">\(df_2\)</span> = N - k.</p>
+<ul>
+<li>Values of F more inconsistent with Ho than what was observed in the
+data are values even farther out in the upper tail, so the P-value is
+the area captured in the upper tail of the corresponding F curve.
+*(Hint: In ALEKS calculator, use P(F &gt; _) to calculate the
+P-value)*</li>
+</ul>
+<p>A <strong>mean square</strong> is the sum of squares divided by its
+df.</p>
+<ul>
+<li><p>Mean Square for Treatments, MSTr = <span class="math inline">\(\frac{SSTr}{k - 1}\)</span></p></li>
+<li><p>Mean Square for Errors, MSE = <span class="math inline">\(\frac{SSE}{N - k}\)</span></p></li>
+</ul>
+<p><strong>SSTr</strong> (Sum Squares Treatments) measures the
+differences <em>(variation)</em> among the k sample means.</p>
+<ul>
+<li>SSTr = <span class="math inline">\(n_1(\bar{x_1} - \bar{X})^2 +
+n_2(\bar{x_2} - \bar{X})^2 + ... + n_k(\bar{x_k} -
+\bar{X})^2\)</span></li>
+</ul>
+<p><strong>SSE</strong> (Sum Squares Errors) measures the variation
+“within” the k samples.</p>
+<ul>
+<li>SSE = <span class="math inline">\((n_1 - 1)S^2_1 + (n_2 - 1)S^2_2 +
+... + (n_k - 1)S^2_k\)</span></li>
+</ul>
+<p>When Ho is true <span class="math inline">\((\mu_1 = \mu_2 = ... =
+\mu_k)\)</span></p>
+<ul>
+<li><span class="math inline">\(\mu_{mstr}\)</span> = <span class="math inline">\(\mu_{mse}\)</span></li>
+</ul>
+<p>However, when Ho is false,</p>
+<ul>
+<li><span class="math inline">\(\mu_{mstr}\)</span> &gt; <span class="math inline">\(\mu_{mse}\)</span></li>
+</ul>
+<p>and the greater the differences among the <span class="math inline">\(\mu\)</span>’s, the larger the <span class="math inline">\(\mu_{mstr}\)</span> will be relative to <span class="math inline">\(\mu_{mse}\)</span></p>
+<hr />
+</div>
+<div id="summarizing-and-anova" class="section level3">
+<h3>Summarizing and ANOVA</h3>
+<table>
+<colgroup>
+<col width="14%" />
+<col width="21%" />
+<col width="21%" />
+<col width="21%" />
+<col width="21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>SOURCE</th>
+<th align="center">df</th>
+<th align="center">SS</th>
+<th align="center">MS</th>
+<th align="center">F</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Treatments</td>
+<td align="center">k - 1</td>
+<td align="center">SST</td>
+<td align="center">MST = <span class="math inline">\(\frac{SST}{k -
+1}\)</span></td>
+<td align="center">F = <span class="math inline">\(\frac{MST}{MSE}\)</span></td>
+</tr>
+<tr class="even">
+<td>Error</td>
+<td align="center">N - k</td>
+<td align="center">SSE</td>
+<td align="center">MSE = <span class="math inline">\(\frac{SSE}{N -
+k}\)</span></td>
+<td align="center">.</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td align="center">N - 1</td>
+<td align="center">SSTo</td>
+<td align="center">.</td>
+<td align="center">.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>ANOVA-summary table.</strong> A partially completed ANOVA
+table for a completely randomized design is shown here:</p>
+<table>
+<thead>
+<tr class="header">
+<th>SOURCE</th>
+<th align="center">df</th>
+<th align="center">SS</th>
+<th align="center">MS</th>
+<th align="center">F</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Treatments</td>
+<td align="center">4</td>
+<td align="center">24.7</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="even">
+<td>Error</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">.</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td align="center">34</td>
+<td align="center">62.4</td>
+<td align="center">.</td>
+<td align="center">.</td>
+</tr>
+</tbody>
+</table>
+<p><em>a)</em> Complete the ANOVA table.</p>
+<table>
+<thead>
+<tr class="header">
+<th>SOURCE</th>
+<th align="center">df</th>
+<th align="center">SS</th>
+<th align="center">MS</th>
+<th align="center">F</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Treatments</td>
+<td align="center">4</td>
+<td align="center">24.7</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="even">
+<td>Error</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">.</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td align="center">34</td>
+<td align="center">62.4</td>
+<td align="center">.</td>
+<td align="center">.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Compare with the formula. k - 1 = 4; n - 1 = 34</li>
+</ul>
+<table>
+<colgroup>
+<col width="14%" />
+<col width="21%" />
+<col width="21%" />
+<col width="21%" />
+<col width="21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>SOURCE</th>
+<th align="center">df</th>
+<th align="center">SS</th>
+<th align="center">MS</th>
+<th align="center">F</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Treatments</td>
+<td align="center">k - 1</td>
+<td align="center">SST</td>
+<td align="center">MST = <span class="math inline">\(\frac{SST}{k -
+1}\)</span></td>
+<td align="center">F = <span class="math inline">\(\frac{MST}{MSE}\)</span></td>
+</tr>
+<tr class="even">
+<td>Error</td>
+<td align="center">N - k</td>
+<td align="center">SSE</td>
+<td align="center">MSE = <span class="math inline">\(\frac{SSE}{N -
+k}\)</span></td>
+<td align="center">.</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td align="center">N - 1</td>
+<td align="center">SSTo</td>
+<td align="center">.</td>
+<td align="center">.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="14%" />
+<col width="21%" />
+<col width="21%" />
+<col width="21%" />
+<col width="21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>SOURCE</th>
+<th align="center">df</th>
+<th align="center">SS</th>
+<th align="center">MS</th>
+<th align="center">F</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Treatments</td>
+<td align="center">4</td>
+<td align="center">24.7</td>
+<td align="center"><span class="math inline">\(\frac{24.7}{4}\)</span> =
+6.175</td>
+<td align="center"><span class="math inline">\(\frac{6.175}{1.257}\)</span> = 4.91</td>
+</tr>
+<tr class="even">
+<td>Error</td>
+<td align="center">30</td>
+<td align="center">37.7</td>
+<td align="center"><span class="math inline">\(\frac{37.7}{30}\)</span>
+= 1.257</td>
+<td align="center">.</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td align="center">34</td>
+<td align="center">62.4</td>
+<td align="center">.</td>
+<td align="center">.</td>
+</tr>
+</tbody>
+</table>
+<p><em>b)</em> How many treatments are involved in the experiment?</p>
+<ul>
+<li>There are 5 treatments. From the ANOVA table, the degrees of freedom
+for treatments is k - 1 = 4.</li>
+</ul>
+<p><em>c)</em> Do the data provide sufficient evidence to indicate a
+difference among the treatment means? Test using <span class="math inline">\(\alpha\)</span> = 0.10. Use the critical value
+approach. <em>(Hint: In ALEKS calculator use the function
+<strong>F_</strong>)</em></p>
+<ul>
+<li><p>First, identify the degrees of freedom: <span class="math inline">\(df_1 = 4\)</span> and <span class="math inline">\(df_2 = 30\)</span></p></li>
+<li><p>In ALEKS calculator type: <span class="math inline">\(F(0.10,
+dfn=4, dfd=30)\)</span></p></li>
+<li><p>The corresponding F-critical value is 2.14, so the rejection
+region is <span class="math inline">\([2.14, \infty)\)</span></p></li>
+<li><p>Since the F test , 4.91, is in the rejection region, F-test &gt;
+2.14, reject the null hypothesis.</p></li>
+<li><p>At least one of those treatment average is different than the
+others.</p></li>
+</ul>
+<hr />
 <p>The human resources department of a large investment bank announced
 that the number of people it interviews monthly has a mean of 100 with a
 standard deviation of 16.3. The management of the bank suspects that the
@@ -836,6 +1172,7 @@ reject Ho.</p></li>
 will find a match their first time using the site.</p></li>
 </ul>
 <hr />
+</div>
 </div>
 </div>
 
