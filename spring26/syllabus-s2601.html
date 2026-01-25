@@ -11,7 +11,7 @@
 
 
 
-<title>syllabus-f25.knit</title>
+<title>syllabus-s2601.knit</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -263,17 +263,29 @@ font-size: 18px
 td, th {
 padding: 8px
 }
+.page-wrapper{
+display: flex;
+flex-direction: row;
+width: 100%;
+height: 100vh;
+overflow: hidden;
+}
 #toc {
-float: left;
-padding-top: 1%;
-width: 15%;
+flex: 0 0 250px;
+padding: 1rem;
+max-width: 300px;
 background: #EEEEEE;
-position: fixed;
+position: sticky;
+top: 0;
+max-height: 100vh;
+overflow-y: auto;
+overflow-x: hidden;
 }
 #syllabus{
-float: left;
-width: 70%;
-margin-left: 30%;
+flex: 1;
+min-width: 0;
+padding: 1rem;
+overflow-y: auto;
 }
 </style>
 
@@ -376,9 +388,10 @@ display: none;
 </div>
 
 
+<div class="page-wrapper">
 <div id="toc">
 <ul>
-<li><p><a href="#syllabus"> Course Description </a></p></li>
+<li><p><a href="#t1"> Course Description </a></p></li>
 <li><p><a href="#t2"> Learning Outcomes </a></p></li>
 <li><p><a href="#t3"> Course Information </a></p></li>
 <li><p><a href="#t4"> Technical Requirements </a></p></li>
@@ -407,9 +420,9 @@ display: none;
 <div id="hunter-college-of-cuny" class="section level1">
 <h1>Hunter College of CUNY</h1>
 <p><strong>STAT 113 - ELEMENTARY PROBABILITY AND STATISTICS <br>
-SYLLABUS - FALL 2025</strong></p>
+SYLLABUS - SPRING 2026</strong></p>
 </center>
-<hr />
+<hr id="t1">
 <p><strong>COURSE DESCRIPTION</strong></p>
 <p>An Introduction to applied statistics and statistical computing.
 Hands-on data analysis. Graphical inference. The five number summary,
@@ -446,7 +459,7 @@ and</p></li>
 <p><strong>COURSE INFORMATION</strong></p>
 <ul>
 <li><p>Section: <em>1</em></p></li>
-<li><p>Schedule: <em>Monday and Thursday</em></p></li>
+<li><p>Schedule: <em>Monday and Wednesday</em></p></li>
 <li><p>Time: <em>8:30am - 9:45am</em></p></li>
 <li><p>Room: <em>HN 305 (In Person)</em></p></li>
 <li><p>Instructor: <em>Alejandro Falchettore</em></p></li>
@@ -529,7 +542,8 @@ miss the first day, you are not excused from the KC. You must take it in
 order for your VOE to be certified.</p></li>
 <li><p>Although there are 154 learning objectives in the course, your KC
 may identify material that you already know and can skip. You will also
-do one KC after a due date for one or sometimes two objectives.</p></li>
+do one KC after a due date for one or sometimes two objectives (except
+objectives 1, 2, 3 and 4).</p></li>
 <li><p>Depending on how you do on each KC, you may be able to skip
 material, or you may be sent back to redo material that you have not
 completely mastered. If you are required to redo materials, you will not
@@ -537,9 +551,10 @@ lose the points you have gained but you will lose time because you need
 certain material in order to be able to learn the next topics.</p></li>
 <li><p>Statistics is similar to mathematics in that it is cumulative.
 What you learn at the beginning of the semester, you will use throughout
-the rest of the course. At the end of the course, there is a required,
-scheduled final knowledge check–<strong>5% of your grade comes from
-taking the final knowledge check, KC</strong>.</p></li>
+the rest of the course. <strong>In the middle and at the end of the
+course, there are REQUIRED scheduled knowledge checks: Mid Semester
+Knowledge Check and Final Knowledge Check–5% of your grade comes from
+taking those KC’s.</strong></p></li>
 </ul>
 <hr id="t8">
 <p><strong>LEARNING VS MASTERING</strong></p>
@@ -600,98 +615,109 @@ Due Date<br>(11:59 pm)
 Initial KC
 </td>
 <td style="text-align:center">
-August 28
+January 26
 </td>
 <td style="text-align:center">
-August 28
+January 26
 </td>
 </tr>
 <tr>
 <td style="width:30%">
-Module 1
+Objective 1
 </td>
 <td style="text-align:center">
-August 28
+January 26
 </td>
 <td style="text-align:center">
-September 13
+February 9
 </td>
 </tr>
 <tr>
 <td style="width:30%">
-Module 2
+Objective 2
 </td>
 <td style="text-align:center">
-August 28
+January 26
 </td>
 <td style="text-align:center">
-September 13
+February 9
 </td>
 </tr>
 <tr>
 <td style="width:30%">
-Module 3
+Objective 3
 </td>
 <td style="text-align:center">
-September 16
+February 12
 </td>
 <td style="text-align:center">
-September 29
+February 25
 </td>
 </tr>
 <tr>
 <td style="width:30%">
-Module 4
+Objective 4
 </td>
 <td style="text-align:center">
-September 30
+February 26
 </td>
 <td style="text-align:center">
-October 21
+March 16
 </td>
 </tr>
 <tr>
 <td style="width:30%">
-Module 5
+Objective 5
 </td>
 <td style="text-align:center">
-October 24
+March 19
 </td>
 <td style="text-align:center">
-November 6
+April 6
 </td>
 </tr>
 <tr>
 <td style="width:30%">
-Module 6
+Objective 6
 </td>
 <td style="text-align:center">
-October 24
+March 19
 </td>
 <td style="text-align:center">
-November 6
+April 6
 </td>
 </tr>
 <tr>
 <td style="width:30%">
-Module 7
+Midterm KC
 </td>
 <td style="text-align:center">
-November 7
+March 30
 </td>
 <td style="text-align:center">
-November 18
+April 10
 </td>
 </tr>
 <tr>
 <td style="width:30%">
-Module 8
+Objective 7
 </td>
 <td style="text-align:center">
-November 21
+April 7
 </td>
 <td style="text-align:center">
-December 13
+April 20
+</td>
+</tr>
+<tr>
+<td style="width:30%">
+Objective 8
+</td>
+<td style="text-align:center">
+April 23
+</td>
+<td style="text-align:center">
+May 11
 </td>
 </tr>
 <tr>
@@ -699,10 +725,10 @@ December 13
 ALEKS Pie
 </td>
 <td style="text-align:center">
-August 28
+January 26
 </td>
 <td style="text-align:center">
-December 19
+May 22
 </td>
 </tr>
 <tr>
@@ -710,10 +736,10 @@ December 19
 Final KC
 </td>
 <td style="text-align:center">
-December 20
+May 23
 </td>
 <td style="text-align:center">
-December 21
+May 24
 </td>
 </tr>
 </table>
@@ -734,7 +760,7 @@ SECTION 1
 </thead>
 <tr>
 <td style="width:30%">
-Aug 28
+Jan 26
 </td>
 <td>
 <a href="lect-1.html"> Initial Knowledge Check </a>
@@ -742,7 +768,7 @@ Aug 28
 </tr>
 <tr>
 <td style="width:30%">
-Sep 4
+Jan 28
 </td>
 <td>
 <a href="lect-2.html"> R and Categorical Data </a>
@@ -750,7 +776,7 @@ Sep 4
 </tr>
 <tr>
 <td style="width:30%">
-Sep 8
+Feb 2
 </td>
 <td>
 <a href="lect-3.html"> Quantitative Data </a>
@@ -758,16 +784,23 @@ Sep 8
 </tr>
 <tr>
 <td style="width:30%">
-Sep 11
+Feb 4
 </td>
 <td>
-<a href="lect-4.html"> Introduction to Data Day 1 and Review for Exam 1
-</a>
+<a href="lect-4.html"> Introduction to Data Day 1 </a>
+</td>
+</tr>
+<tr>
+<td style="width:30%">
+Feb 9
+</td>
+<td>
+<a href="lect-4.html"> Review for Exam 1 </a>
 </td>
 </tr>
 <tr style="background:#FFFF97">
 <td style="width:30%">
-<strong>Sep 15</strong>
+<strong>Feb 11</strong>
 </td>
 <td>
 <strong>Exam 1</strong> <em>(ALEKS - Modules 1-2)</em>
@@ -775,7 +808,7 @@ Sep 11
 </tr>
 <tr style="background:#FFFF97">
 <td style="width:30%;">
-<strong>Sep 18</strong>
+<strong>Feb 18</strong>
 </td>
 <td>
 <strong>Data Day 1</strong>
@@ -783,7 +816,7 @@ Sep 11
 </tr>
 <tr>
 <td style="width:30%">
-Sep 25
+Feb 23
 </td>
 <td>
 <a href="lect-5.html"> Summarizing Two Quantitative Variables </a>
@@ -791,23 +824,22 @@ Sep 25
 </tr>
 <tr>
 <td style="width:30%">
-Sep 29
+Feb 25
 </td>
 <td>
 <a href="lect-6.html"> The Least-Squares Regression Line </a>
 </td>
 </tr>
-<tr>
 <td style="width:30%">
-Oct 6
+Mar 2
 </td>
 <td>
-<a href="lect-7.html"> Side-by-Side Box Plots </a>
+<a href="lect-8.html"> Side-by-Side Box Plot </a>
 </td>
 </tr>
 <tr>
 <td style="width:30%">
-Oct 9
+Mar 4
 </td>
 <td>
 <a href="lect-8.html"> Back-to-Back Stem Plots </a>
@@ -815,7 +847,7 @@ Oct 9
 </tr>
 <tr>
 <td style="width:30%">
-Oct 14 <em>(Tuesday)</em>
+Mar 9
 </td>
 <td>
 <a href="lect-9.html"> Introduction to Data Day 2 </a>
@@ -823,7 +855,7 @@ Oct 14 <em>(Tuesday)</em>
 </tr>
 <tr>
 <td style="width:30%">
-Oct 16
+Mar 11
 </td>
 <td>
 <a href="lect-10.html"> Review for Exam 2 </a>
@@ -831,23 +863,23 @@ Oct 16
 </tr>
 <tr style="background:#FFFF97">
 <td style="width:30%">
-<strong>Oct 23</strong>
-</td>
-<td>
-<strong>Exam 2</strong> <em>(ALEKS - Modules 3-4)</em>
-</td>
-</tr>
-<tr style="background:#FFFF97">
-<td style="width:30%">
-<strong>Oct 24</strong> <em>(Friday)</em>
+<strong>Mar 16</strong>
 </td>
 <td>
 <strong>Data Day 2</strong>
 </td>
 </tr>
+<tr style="background:#FFFF97">
+<td style="width:30%">
+<strong>Mar 18</strong>
+</td>
+<td>
+<strong>Exam 2</strong> <em>(ALEKS - Modules 3-4)</em>
+</td>
+</tr>
 <tr>
 <td style="width:30%">
-Oct 27
+Mar 18
 </td>
 <td>
 <a href="lect-11.html"> Sampling Distribution </a>
@@ -855,7 +887,7 @@ Oct 27
 </tr>
 <tr>
 <td style="width:30%">
-Oct 30
+Mar 23
 </td>
 <td>
 <a href="lect-12.html"> Point Estimator and Confidence Interval </a>
@@ -863,7 +895,7 @@ Oct 30
 </tr>
 <tr>
 <td style="width:30%">
-Nov 3
+Mar 25
 </td>
 <td>
 <a href="lect-13.html"> Introduction and Hypothesis Testing </a>
@@ -871,7 +903,7 @@ Nov 3
 </tr>
 <tr>
 <td style="width:30%">
-Nov 6
+Mar 30
 </td>
 <td>
 <a href="lect-14.html"> Testing for a Population Proportion: Z Test </a>
@@ -879,7 +911,7 @@ Nov 6
 </tr>
 <tr>
 <td style="width:30%">
-Nov 10
+Apr 13
 </td>
 <td>
 <a href="lect-15.html"> Testing for a Population Mean: T Test </a>
@@ -887,7 +919,7 @@ Nov 10
 </tr>
 <tr>
 <td style="width:30%">
-Nov 13
+Apr 15
 </td>
 <td>
 <a href="lect-16.html"> Introduction to Data Day 3 </a>
@@ -895,7 +927,7 @@ Nov 13
 </tr>
 <tr>
 <td style="width:30%">
-Nov 17
+Apr 20
 </td>
 <td>
 <a href="lect-17.html"> Review for Exam 3 </a>
@@ -903,7 +935,7 @@ Nov 17
 </tr>
 <tr style="background:#FFFF97">
 <td style="width:30%">
-<strong>Nov 20</strong>
+<strong>Apr 22</strong>
 </td>
 <td>
 <strong>Exam 3</strong> <em>(ALEKS - Modules 5-6-7)</em>
@@ -911,7 +943,7 @@ Nov 17
 </tr>
 <tr style="background:#FFFF97">
 <td style="width:30%">
-<strong>Nov 24</strong>
+<strong>Apr 27</strong>
 </td>
 <td>
 <strong>Data Day 3</strong>
@@ -919,7 +951,7 @@ Nov 17
 </tr>
 <tr>
 <td style="width:30%">
-Dec 1
+Apr 29
 </td>
 <td>
 <a href="lect-18.html"> The Chi-Square Goodness-of-Fit Test </a>
@@ -927,7 +959,7 @@ Dec 1
 </tr>
 <tr>
 <td style="width:30%">
-Dec 4
+May 4
 </td>
 <td>
 <a href="lect-19.html"> Review for Exam 4 </a>
@@ -935,7 +967,7 @@ Dec 4
 </tr>
 <tr>
 <td style="width:30%">
-Dec 8
+May 6
 </td>
 <td>
 <a href="lect-20.html"> Introduction to Data Day 4 </a>
@@ -943,7 +975,7 @@ Dec 8
 </tr>
 <tr style="background:#FFFF97">
 <td style="width:30%">
-<strong>Dec 11</strong>
+<strong>May 11</strong>
 </td>
 <td>
 <strong>Data Day 4</strong>
@@ -951,7 +983,7 @@ Dec 8
 </tr>
 <tr style="background:#FFFF97">
 <td style="width:30%">
-<strong>Dec 15</strong>
+<strong>May 13</strong>
 </td>
 <td>
 <strong>Exam 4</strong> <em>(ALEKS - Module 8)</em>
@@ -959,7 +991,7 @@ Dec 8
 </tr>
 <tr style="background:#FFFF97">
 <td style="width:30%">
-<strong>Dec 18</strong>
+<strong>May 18</strong>
 </td>
 <td>
 <strong>Final Exam (9:00 - 11:00 am)</strong>
@@ -983,19 +1015,18 @@ have a conflict, you need to notify your instructor prior to the exam so
 that you may schedule to take the exam on-site in the Testing center
 prior to the date of your class’ exam date. With permission from your
 instructor, you may take a makeup exam at the end of the semester. These
-exam grades contribute 30% of your final grade. The final exam is
-cumulative.</p></li>
+exam grades contribute 30% of your final grade.</p></li>
 <li><p>You must complete all four (4) Data Day assignments (20%) and a
 REQUIRED semester-long independent data project all on time for an A or
 A+. For a grade of A- or less, the Independent Data Project is not
 required but can be done for guaranteed extra 2 points credit toward the
 maximum of 5 extra credit points. All your data assignments must be
 completed using the statistical software <strong>R</strong>. Your
-projects will be not be given a grade if you use a different
-software.</p></li>
+projects will be not be given a grade if you use a different software or
+use of Artificial Intelligence.</p></li>
 <li><p>You must take the final exam (10% of your final grade).</p></li>
-<li><p>You should take the final KC. <strong>It counts as 5
-points.</strong></p></li>
+<li><p>You should take the mid semester and the final KC. <strong>They
+count as 5 points.</strong></p></li>
 <li><p>There is up to an additional 5% extra credit available to you.
 <em>See the Grade Points Breakdown below.</em></p></li>
 </ul>
@@ -1020,8 +1051,8 @@ unique learning objectives. You will receive 25% credit for
 <strong>completing work by the given due dates;</strong> for work not
 completed by the due date but completed by the end of the class, you
 will receive an additional 10%. The last possible date to complete work
-on any module is <strong>December 19, 2025</strong>. So, if all the work
-is completed by the module due dates, you get 35 full points–25 for
+on any module is <strong>May 13, 2026</strong>. So, if all the work is
+completed by the module due dates, you get 35 full points–25 for
 completing 100% of the learning objectives on time plus the 10
 additional points for PIE Mastery of 100%. If you complete half of the
 learning objectives (50%) by the module due date and then complete all
@@ -1034,10 +1065,13 @@ points.</p>
 Knowledge Checks (5)
 </li>
 <blockquote>
-<p>There is a Knowledge Check (KC) at the beginning and end of the
-course and one at the end of each Module. The Post-Module KCs will
-identify what you still need to know prior to your Midterm Exams. The
-KCs are required in this course. The final KC counts 5 points.</p>
+<p>There are three scheduled Knowledge Checks (KC) at the beginning
+(IKC), in the middle (MKC) and at end of the course (FKC) in addition to
+Post-Module Knowledge Checks after Objectives 5,6,7 (combined) and
+Objective 8. ALEKS will use the KCs to assess what topics you have
+mastered. And you can use them to identify what you still need to know
+prior to your Midterm Exams. The KCs are required in this course. MKC
+counts for 2 points and FKC counts for 3 points.</p>
 </blockquote>
 <li style="font-size:18px">
 Video Assignments (0)
@@ -1071,13 +1105,12 @@ on its merit.</p>
 Final Exam (10)
 </li>
 <blockquote>
-<p>The final exam will be on <strong>Thursday, December 18, 9:00am -
-11:00am</strong>. It will be given on Aleks. The final exam contributes
-10% of your grade. You will be able to see your grade for the final exam
-on Aleks. You will not be able to review the final exam after you take
-it. If the final exam grade is a part of a grade appeal, a committee of
-faculty will review the final to make sure that it was graded
-properly.</p>
+<p>The final exam will be on <strong>May 18, 9:00am - 11:00am</strong>.
+It will be given on Aleks. The final exam contributes 10% of your grade.
+You will be able to see your grade for the final exam on Aleks. You will
+not be able to review the final exam after you take it. If the final
+exam grade is a part of a grade appeal, a committee of faculty will
+review the final to make sure that it was graded properly.</p>
 </blockquote>
 <li style="font-size:18px">
 Data Days (20)
@@ -1106,14 +1139,13 @@ points for completing this (there is a maximum of 5 extra credit points
 available to you in total). This is a TURNITIN project and cannot show
 more than 40% of the project to be copied from other sources in order to
 get credit–the numbers may be the same but the words may not.) You must
-do the work entirely on your own.</p>
+do the work entirely on your own and cannot use AI.</p>
 </blockquote>
 <li style="font-size:18px">
 Extra Credit (0-5)
 </li>
 <blockquote>
-<p>Regular attendance of tutoring service at the Dolciani Math Learning
-Center (Main Library, 7[th] floor)</p>
+<p>ALEKS’s Overall Pie Mastery Work.</p>
 </blockquote>
 <hr id="t14">
 <p><strong>FINAL GRADE</strong></p>
@@ -1139,8 +1171,7 @@ course for a good grade. Good Luck.</p>
 <p>The Dolciani Math Learning Center is a multi-media/tutorial Center
 providing computer-assisted tutorials, workshops and tutoring for
 students across the College who need assistance in mathematics and
-statistics. There are both online and onsite services. Visit their
-website
+statistics. Visit their website
 <a href="https://www.hunter.cuny.edu/dolciani" target="blank">www.hunter.cuny.edu/dolciani</a>
 and be sure to check your email for details on specific events
 throughout the semester.</p>
@@ -1199,9 +1230,9 @@ syllabus.</p>
 <ul>
 <li><p>
 <p>The last day to withdraw from the course with a grade of W is
-<strong>November 6, 2025</strong>. It is your responsibility to know
-this date. <strong>Please note that a grade of W may be interpreted by
-some as a failing grade.</strong></p>
+<strong>April 13, 2026</strong>. It is your responsibility to know this
+date. <strong>Please note that a grade of W may be interpreted by some
+as a failing grade.</strong></p>
 </p></li>
 <li><p>THERE ARE NO INC grades allowed IN THIS CLASS.<br />
 </p></li>
@@ -1407,6 +1438,8 @@ follow up or documentation is needed.</p>
 </ul>
 <p>Ensure your computer meets system requirements by going to this link:
 <a href="https://www.aleks.com/support/system_requirements" target="_blank">https://www.aleks.com/support/system_requirements</a></p>
+</div>
+</div>
 </div>
 </div>
 </div>
